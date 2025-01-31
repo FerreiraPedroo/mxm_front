@@ -1,0 +1,74 @@
+[
+    {
+        "id":"1",
+        "nome":"[PRO00208] Odontologia Fase 2",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"1"
+    },
+    {
+        "id":"2",
+        "nome":"Toca da coruja - CG",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"2"
+    },
+    {
+        "id":"3",
+        "nome":"Toca da coruja - BG",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"3"
+    },
+    {
+        "id":"4",
+        "nome":"Lab. analises clinicas - Clesam",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"4"
+    },
+    {
+        "id":"5",
+        "nome":"Lab. Desenv. prod. farmacêuticos - BS",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"5"
+    },
+    {
+        "id":"6",
+        "nome":"Telhado bloco E - BS",
+        "classificacao":"OPEX",
+        "conta_contabil_id":"4"
+    },
+    {
+        "id":"7",
+        "nome":"Reforma NHD",
+        "classificacao":"OPEX",
+        "conta_contabil_id":"2"
+    },
+    {
+        "id":"8",
+        "nome":"Lab. Praticas clinicas Vet.  - BS",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"3"
+    },
+    {
+        "id":"9",
+        "nome":"Lab. Praticas clinicas Vet.  - BG",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"4"
+    },
+    {
+        "id":"10",
+        "nome":"Mudança CG3",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"1"
+    },
+    {
+        "id":"11",
+        "nome":"Clinica Veterinária - BS",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"2"
+    },
+    {
+        "id":"12",
+        "nome":"Clinica Veterinária - BG",
+        "classificacao":"CAPEX",
+        "conta_contabil_id":"4"
+    }
+]

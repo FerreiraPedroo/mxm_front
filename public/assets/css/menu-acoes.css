@@ -1,0 +1,90 @@
+.navbar-acoes {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5F5F5;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+.navbar-acoes-buttons button,
+.navbar-acoes-right button {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #555;
+  border-radius: 4px;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar-acoes-buttons button:hover,
+.navbar-acoes-right button:hover {
+  background-color: #e0e0e0;
+}
+
+.navbar-acoes-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-acoes-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-acoes {
+  position: relative;
+}
+
+.dropdown-acoes-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-acoes-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.dropdown-acoes-menu button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-acoes-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-acoes:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-acoes-buttons i,
+.navbar-acoes-right i {
+  font-size: 16px;
+}

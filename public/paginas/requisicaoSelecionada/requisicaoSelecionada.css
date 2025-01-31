@@ -1,0 +1,160 @@
+/* ##############################################
+// ###  PAGE  ###################################
+// ##############################################
+*/
+#page-title {
+ width: 100%;
+ max-width: 100%;
+ padding: 8px;
+ font-size: 2rem;
+ font-weight: bold;
+ color: #001DBC;
+}
+
+#main-conteiner {
+ width: 100%;
+ max-width: 1024px;
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ padding: 16px;
+}
+
+.secao-conteiner {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+
+ background-color: #F5F5F5;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+
+ padding: 16px 28px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#campos {
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+}
+
+
+/* ##############################################
+// ###  INPUT  ##################################
+// ##############################################
+*/
+
+.input-label {
+ display: block;
+ color: #20124d;
+ margin-bottom: 2px;
+ font-weight: bold;
+}
+
+.input-data-info{
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #666666;
+ border-radius: 4px;
+ font-size: 14px;
+ color: #000;
+ background-color: #fff;
+}
+
+.textarea-data-info {
+ resize: vertical;
+ height: 60px;
+}
+
+.input-dual-box {
+ width: 100%;
+ display: flex;
+ gap: 32px;
+}
+
+.input-box {
+ width: 100%;
+}
+
+
+// ##############################################
+// ###  INPUT: ESPECÍFICO DA PÁGINA  ############
+// ##############################################
+
+#orcado-box {
+ width: 50%;
+}
+
+
+/* ##############################################
+// ###  AÇÕES  ##################################
+// ##############################################
+*/
+.navbar-acoes-container {
+ display: flex;
+ flex-wrap: wrap;
+ padding: 8px;
+ gap: 12px;
+}
+.navbar-acoes-botoes-box {
+ display: flex;
+ gap: 12px;
+}
+.navbar-acoes-botao {
+ display: flex;
+ align-items: center;
+ border-radius: 6px;
+ border: none;
+ padding: 8px; 
+}
+.navbar-acoes-botao:hover {
+ background-color: #e0e0e0;
+ cursor: pointer;
+}
+.navbar-acoes-botao-img {
+ width: 32px;
+ height: 32px;
+}
+
+
+/* ##############################################
+// ###  NOTIFICAÇÃO  ############################
+// ##############################################
+*/
+
+#notification-container {
+ position: fixed;
+ top: 0;
+ width: 100vw;
+ height: 100vh;
+ display: none;
+ justify-content: center;
+ align-items: center;
+ background-color: rgba(0,0,0,0.5);
+ z-index: 99;
+}
+#notification-message {
+ width: 500px;
+ height: 300px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+ padding: 12px;
+ background-color: #fff;
+ border: 1px solid black;
+ border-radius: 8px;
+}
+#notification-text{
+ font-size: 1.5rem;
+ color: #001DBC;
+}
+#notification-button{
+ width: 120px;
+ height: 40px;
+ font-size: 1.2rem;
+ border-radius: 6px;
+ cursor: pointer;
+}

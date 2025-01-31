@@ -1,0 +1,37 @@
+.tabs {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  gap: 8px;
+
+}
+
+.tabs button {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #555;
+  border-radius: 4px;
+  align-items: center;
+  gap: 6px;
+}
+
+.tabs-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.tabs-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

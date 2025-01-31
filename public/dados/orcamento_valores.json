@@ -1,0 +1,26 @@
+[
+   {
+      "id": "1",
+      "orcamento_id": "1",
+      "mes": "JANEIRO-25",
+      "valor": "5000"
+   },
+   {
+      "id": "2",
+      "orcamento_id": "1",
+      "mes": "FEVEREIRO-25",
+      "valor": "3000"
+   },
+   {
+      "id": "3",
+      "orcamento_id": "1",
+      "mes": "MAIO-25",
+      "valor": "4000"
+   },
+   {
+      "id": "4",
+      "orcamento_id": "1",
+      "mes": "JULHO-25",
+      "valor": "2000"
+   }
+]

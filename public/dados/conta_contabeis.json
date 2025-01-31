@@ -1,0 +1,677 @@
+[
+   {
+      "id": "1",
+      "codigo": "45030115",
+      "nome": "ASSESSORIA/CONSULTORIA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "2",
+      "codigo": "1321101",
+      "nome": "EQUIPAMENTOS DE VIGILANCIA E SEGURANÇA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "3",
+      "codigo": "45010305",
+      "nome": "EQUIPTOS DE REFRIGERACAO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "4",
+      "codigo": "45030127",
+      "nome": "INSTALACOES MANUT. CONSERV. IMOVEIS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "5",
+      "codigo": "45030141",
+      "nome": "MANUT. CONSERV. MAQUINAS E EQUIPTOS.",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "6",
+      "codigo": "45030144",
+      "nome": "MANUT. CONSERV. MOVEIS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "7",
+      "codigo": "1320501",
+      "nome": "MAQUINAS E EQUIPAMENTOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "8",
+      "codigo": "45050101",
+      "nome": "MATERIAL DE HIGIENE E/OU LIMPEZA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "9",
+      "codigo": "45050317",
+      "nome": "MATERIAL P/COPA, COZINHA E REFEITORIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "10",
+      "codigo": "45050321",
+      "nome": "MATERIAL P/EXPEDIENTE E ESCRITORIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "11",
+      "codigo": "45050105",
+      "nome": "MATERIAL P/REPARO IMOVEIS/INSTALACOES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "12",
+      "codigo": "45050330",
+      "nome": "MATERIAL SERR/ELET/MARC/PINT/HIDR",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "13",
+      "codigo": "1320401",
+      "nome": "MOVEIS E UTENSILIOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "14",
+      "codigo": "45050391",
+      "nome": "OUTROS BENS OU MATERIAS DE PEQ. VALOR",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "15",
+      "codigo": "45050121",
+      "nome": "OUTROS MATERIAS PARA MANUTENCAO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "16",
+      "codigo": "45030191",
+      "nome": "OUTROS SERVICOS PRESTADOS POR P.JURIDICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "17",
+      "codigo": "45050111",
+      "nome": "PECAS E ACESSORIOS PARA MAQUINAS/EQUIPTO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "18",
+      "codigo": "1321301",
+      "nome": "REFORMA / AMPLIACAO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "19",
+      "codigo": "45030155",
+      "nome": "SERVICOS DE SEGURANCA PATRIMONIAL",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "20",
+      "codigo": "45030159",
+      "nome": "SERVICOS DE TRANSPORTE/FRETES E CARRETOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "21",
+      "codigo": "45090109",
+      "nome": "ENERGIA ELETRICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "22",
+      "codigo": "45090101",
+      "nome": "AGUA E ESGOTO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "23",
+      "codigo": "45090501",
+      "nome": "CONDUCAO URBANA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "24",
+      "codigo": "45090105",
+      "nome": "CORREIOS E POSTAGEM",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "25",
+      "codigo": "45090111",
+      "nome": "GAS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "26",
+      "codigo": "45092145",
+      "nome": "OUTRAS TAXAS E CONTRIBUICOES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "27",
+      "codigo": "45050303",
+      "nome": "MATERIAL DE INFORMATICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "28",
+      "codigo": "45050103",
+      "nome": "MATERIAL ELETRICO E HIDRAULICO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "29",
+      "codigo": "45010315",
+      "nome": "EQUIPTOS - OUTROS EQUIPAMENTOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "30",
+      "codigo": "45050305",
+      "nome": "MATERIAL DE LABORATORIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "31",
+      "codigo": "45092107",
+      "nome": "ICMS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "32",
+      "codigo": "31210105",
+      "nome": "DESCONTOS OBTIDOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "33",
+      "codigo": "45110121",
+      "nome": "MULTA/JUROS PAGOS A FORNECEDORES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "34",
+      "codigo": "45030121",
+      "nome": "GRAFICO E REPROGRAFICO EXTERNO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "35",
+      "codigo": "45010101",
+      "nome": "Alugueis - Imoveis",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "36",
+      "codigo": "45010115",
+      "nome": "IMOVEIS - CONDOMINIOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "37",
+      "codigo": "45091511",
+      "nome": "SEGUROS DIVERSOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "38",
+      "codigo": "45092111",
+      "nome": "I.P.T.U.",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "39",
+      "codigo": "45030131",
+      "nome": "LIMPEZA E CONSERVACAO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "40",
+      "codigo": "41210111",
+      "nome": "FERIAS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "41",
+      "codigo": "41210151",
+      "nome": "AVISO PREVIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "42",
+      "codigo": "41210113",
+      "nome": "13o. SALARIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "43",
+      "codigo": "41210309",
+      "nome": "VALE TRANSPORTE",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "44",
+      "codigo": "41210101",
+      "nome": "SALARIOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "45",
+      "codigo": "41210301",
+      "nome": "ALIMENTACAO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "46",
+      "codigo": "41210303",
+      "nome": "ASSISTENCIA MEDICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "47",
+      "codigo": "41210311",
+      "nome": "ASSISTENCIA ODONTOLOGICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "48",
+      "codigo": "41010151",
+      "nome": "AVISO PREVIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "49",
+      "codigo": "41210501",
+      "nome": "FGTS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "50",
+      "codigo": "45092302",
+      "nome": "( - ) PREVIDENCIA SOCIAL - IMUNIDADE",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "51",
+      "codigo": "45092301",
+      "nome": "PREVIDENCIA SOCIAL",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "52",
+      "codigo": "45095103",
+      "nome": "EDIFICACOES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "53",
+      "codigo": "45095129",
+      "nome": "MOVEIS E UTENSILIOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "54",
+      "codigo": "45095121",
+      "nome": "MAQUINAS E EQUIPAMENTOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "55",
+      "codigo": "45095107",
+      "nome": "EQUIPAMENTOS DE LABORATORIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "56",
+      "codigo": "45095111",
+      "nome": "EQUIP. DE VIGILANCIA E SEGURANCA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "57",
+      "codigo": "45095145",
+      "nome": "BENFEITORIAS EM PROPRIEDADE DE TERCEIROS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "58",
+      "codigo": "41210165",
+      "nome": "PERICULOSIDADE",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "59",
+      "codigo": "41210161",
+      "nome": "OUTRAS DESPESAS COM PESSOAL",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "60",
+      "codigo": "41010159",
+      "nome": "INSALUBRIDADE DOC",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "61",
+      "codigo": "41210159",
+      "nome": "INSALUBRIDADE",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "62",
+      "codigo": "41210167",
+      "nome": "PREMIAÇÃO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "63",
+      "codigo": "41010504",
+      "nome": "FGTS MULTA 40%",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "64",
+      "codigo": "41210147",
+      "nome": "CONCURSO/VESTIBULAR",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "65",
+      "codigo": "41210105",
+      "nome": "ANUENIO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "66",
+      "codigo": "45030145",
+      "nome": "MANUT.SOFTWARE, PORTAIS E SERV.INFORMATI",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "67",
+      "codigo": "45095109",
+      "nome": "EQUIPAMENTOS DE INFORMATICA",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "68",
+      "codigo": "45095119",
+      "nome": "INSTALACOES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "69",
+      "codigo": "45092113",
+      "nome": "I.P.V.A.",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "70",
+      "codigo": "45092105",
+      "nome": "DESPESAS COM CARTORIOS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "71",
+      "codigo": "31110131",
+      "nome": "EVENTUAIS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "72",
+      "codigo": "41210313",
+      "nome": "UNIFORMES",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "73",
+      "codigo": "45050325",
+      "nome": "MATERIAL REPROGRAFICO OU GRAFICO",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "74",
+      "codigo": "45092335",
+      "nome": "IPTU",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   },
+   {
+      "id": "75",
+      "codigo": "45010127",
+      "nome": "IMOVEIS - EVENTUAIS",
+      "descricao": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL",
+      "deletado_em": "NULL"
+   }
+]

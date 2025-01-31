@@ -1,0 +1,17 @@
+[
+   {
+      "id":1,
+      "razao_social":"CABINE RIO COMERCIAL LTDA",
+      "CNPJ":"123.167.157/0001-22"
+   },
+   {
+      "id":2,
+      "razao_social":"SAGITARIOS DECORACOES DE INTERIORES LTDA",
+      "CNPJ":"357.951.247/0001-01"
+   },
+   {
+      "id":3,
+      "razao_social":"BMB MATERIAL DE CONSTRUÇÃO S.A.",
+      "CNPJ":"321.471.589/0001-31"
+   }
+]

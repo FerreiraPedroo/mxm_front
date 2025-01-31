@@ -1,0 +1,98 @@
+[
+   {
+      "id": "1",
+      "cod_fac": "FAC-BG-OPEX-40",
+      "justificativa": "Locação da unidade - BGF - Rua da Feira, 256",
+      "centro_custo_id": "1",
+      "conta_contabil_id": "1",
+      "unidade_id": "7",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "2",
+      "cod_fac": "FAC-BG-OPEX-41",
+      "justificativa": "Locação da unidade - BGS - Rua da Fonseca, 240",
+      "centro_custo_id": "2",
+      "conta_contabil_id": "2",
+      "unidade_id": "7",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "3",
+      "cod_fac": "FAC-CG-OPEX-42",
+      "justificativa": "Locação da unidade - CG1 - Av. Cesário de Melo, 2571",
+      "centro_custo_id": "3",
+      "conta_contabil_id": "3",
+      "unidade_id": "6",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "4",
+      "cod_fac": "FAC-CG-OPEX-43",
+      "justificativa": "Locação da unidade - CG2 - Rua Augusto de Vasconcelos, 61",
+      "centro_custo_id": "2",
+      "conta_contabil_id": "4",
+      "unidade_id": "6",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "5",
+      "cod_fac": "FAC-CG-OPEX-44",
+      "justificativa": "Locação da unidade - CG3 - Rua Campo Grande,  900",
+      "centro_custo_id": "1",
+      "conta_contabil_id": "1",
+      "unidade_id": "6",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "6",
+      "cod_fac": "FAC-BS-OPEX-52",
+      "justificativa": "Locação da unidade - CLESAM - Rua Dona Isabel, 94",
+      "centro_custo_id": "1",
+      "conta_contabil_id": "1",
+      "unidade_id": "5",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "7",
+      "cod_fac": "FAC-POLO-OPEX-01",
+      "justificativa": "Locação da unidade - Rua Camerino, 130. Centro (Loja 1)",
+      "centro_custo_id": "1",
+      "conta_contabil_id": "1",
+      "unidade_id": "5",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   },
+   {
+      "id": "8",
+      "cod_fac": "FAC-POLO-OPEX-02",
+      "justificativa": "Locação da unidade - Rua Camerino, 132. Centro (Loja 2)",
+      "centro_custo_id": "1",
+      "conta_contabil_id": "1",
+      "unidade_id": "5",
+      "classificacao": "OPEX",
+      "projeto_id": "NULL",
+      "status": "ATIVO",
+      "criado_em": "NULL"
+   }
+]
