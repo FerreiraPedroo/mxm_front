@@ -63,6 +63,7 @@ class ComponentInputHTML {
  // NO PARAMENTRO 'listaCampos' O PRIMEIRO ELEMENTO REPRESENTA O VALOR DO OPTION
  // ELE É EXLCUIDO (SLICE) DO NOME QUE SERÁ EXIBIDO NO OPTION.
  static inputSelect(nomeInput, nomeLabel, listaDados, listaCampos) {
+  console.log({nomeInput, nomeLabel, listaDados, listaCampos})
   return `
     <div class="input-box">
      <label class="input-label" for="${nomeInput}">${nomeLabel}:</label>
@@ -70,7 +71,7 @@ class ComponentInputHTML {
       <option value="" selected>Selecione uma opção</option>
       ${
        listaDados.reduce((acc, cur) => {
-        acc+=`<option value="${listaCampos[0]}">${
+        acc+=`<option value="${cur[listaCampos[0]]}">${
           Object.entries(cur).reduce((acc,[key,value],index) => {
            if(listaCampos.slice(1).includes(key)){
             if(acc) acc += " - ";

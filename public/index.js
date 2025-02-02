@@ -1,7 +1,6 @@
 // #################################################################
 // ###  CAMINHOS DOS ARQUIVOS DE SCRIPT  ###########################
 // #################################################################
-
 const arquivoPorLocalizacao = {
  "/requisicao-lista": "./paginas/requisicaoLista/requisicaoLista.js",
  "/requisicao-novo": "./paginas/requisicaoNovo/requisicaoNovo.js",
@@ -9,7 +8,6 @@ const arquivoPorLocalizacao = {
  "/orcamento-lista": "./paginas/orcamentoLista/orcamentoLista.js",
  "/orcamento-novo": "./paginas/orcamentoNovo/orcamentoNovo.js",
 }
-
 const arquivosDeScriptInicial = [
  "./roteador.js",
  "./servicos/API.js",
@@ -32,10 +30,6 @@ if(arquivoDaPagina){
 
 
 
-
-
-
-
 // #################################################################
 // ###  CARREGAMENTO DE SCRIPTS PARA HTML  #########################
 // #################################################################
@@ -53,7 +47,7 @@ function carregarScriptsParaHTML(script){
 
 async function carregarScripts(arquivoDeScripts, posicaoArqScript = 0) {
  const arquivoCarregado = await carregarScriptsParaHTML(arquivoDeScripts[posicaoArqScript]);
- console.log(`CARREGADO:${arquivoCarregado}`);
+ // console.log(`CARREGADO:${arquivoCarregado}`);
  if(posicaoArqScript < arquivoDeScripts.length - 1) {
   await carregarScripts(arquivoDeScripts, posicaoArqScript + 1)
  }

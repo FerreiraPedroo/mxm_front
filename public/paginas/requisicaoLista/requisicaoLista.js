@@ -4,46 +4,42 @@ let requisicoesListaInfo = [];
 // ###  INICIALIZAÇÃO DOS SCRIPTS DA PÁGINA  #######################
 // #################################################################
 
-(async ()=> {
+(async () => {
 
-// CARREGA O HTML DA TABS (./componentes/menuAcoes.js)  ############
-const menuAcoesEl = document.getElementById("navbar-acoes");
-menuAcoesEl.innerHTML = menuAcoes("requisicao-lista");
+ // CARREGAR DADOS DA API (./serviços/API.js)  ######################
+ requisicoesListaInfo = await API.reqLista()
 
-// CARREGAR DADOS DA API (./serviços/API.js)  ######################
-requisicoesListaInfo = await API.reqLista()
-console.log(requisicoesListaInfo)
-// CARREGA LISTA DAS REQUISIÇÕES PARA O HTML  ######################
-await listarRequisicoes();
+ // CARREGA O HTML DA TABS (./componentes/menuAcoes.js)  ############
+ const botoesAcoes = [{
+  nome: "Nova requisição",
+  icone: "./assets/imagens/requisicaoLista/requisicao.png",
+  callBack: "roteador('requisicao-novo')"
+ }]
+ const menuAcoes = document.getElementById("navbar-acoes").innerHTML = MenuAcoes.getBotoes(botoesAcoes);
+
+ // CARREGA LISTA DAS REQUISIÇÕES PARA O HTML  ######################
+ listarRequisicoes();
 
 })()
-
 
 
 // #################################################################
 // ###  RENDERIZAR LISTA DE REQUISIÇÕES  ###########################
 // #################################################################
 function listarRequisicoes() {
-let rowsHTML = `<div id="list-row-empyt">VAZIO</div>`;
-if (requisicoesListaInfo.length) {
-  rowsHTML = requisicoesListaInfo.reduce((acc, cur) => {
-  const html = `
-  <div class="list-row" data-id="${cur.id}" onclick="roteador('requisicao-selecionada',${cur.id})">
-    <div class="list-column g-col-size-128">${cur.dt_solicitacao_req}</div>
-    <div class="list-column g-col-size-80">${cur.req}</div>
-    <div class="list-column g-col-size-128x">${cur.justificativa}</div>
-    <div class="list-column g-col-size-96">${cur.orcado}</div>
-    <div class="list-column g-col-size-160">${cur.classificacao}</div>
-    <div class="list-column g-col-size-96">${cur.urgente}</div>
-  </div>
-  `;
-  acc += html;
-  return acc;
-  },"");
- }
+ const cabecalhos = [
+  { coluna: "DT SOLICITAÇÃO", linha: ["dt_solicitacao_req"], tamanhoClasse: "128" },
+  { coluna: "REQ", linha: ["req"], tamanhoClasse: "80" },
+  { coluna: "JUSTIFICATIVA", linha: ["justificativa"], tamanhoClasse: "128x" },
+  { coluna: "ORÇADO", linha: ["orcado"], tamanhoClasse: "96" },
+  { coluna: "CLASSIFICAÇÃO", linha: ["classificacao"], tamanhoClasse: "160" },
+  { coluna: "URGENTE", linha: ["urgente"], tamanhoClasse: "96" },
+ ]
 
-const requisicoesListaEl = document.getElementById("list-rows-box");
-requisicoesListaEl.innerHTML = rowsHTML;
+ const linhasHTML = tabelaHTML("requisicao-selecionada", cabecalhos, requisicoesListaInfo);
+
+ const requisicoesListaEl = document.getElementById("list-rows-box");
+ requisicoesListaEl.innerHTML = linhasHTML;
 
 }
 

@@ -36,15 +36,15 @@
  gap: 16px;
 }
 
-.form-input-label {
+.input-label {
  display: block;
  margin-bottom: 5px;
  font-weight: bold;
 }
 
-.form-input-info {
+.input-info {
  width: 16px;
- vertical align: center
+
 }
 
 .form-input{
@@ -52,6 +52,17 @@
  padding: 10px;
  margin-bottom: 15px;
  border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 14px;
+ color: #000;
+ background-color: #fff;
+}
+
+
+.input-data-info{
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #666666;
  border-radius: 4px;
  font-size: 14px;
  color: #000;

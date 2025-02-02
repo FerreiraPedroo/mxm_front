@@ -4,56 +4,58 @@ let centrosCustoListaInfo = [];
 let unidadeListaListaInfo = [];
 let projetosListaInfo = [];
 let rubricasListaInfo = [];
-const mesesDoAno = ["JANEIRO-25","FEVEREIRO-25","MARÇO-25","ABRIL-25","MAIO-25","JUNHO-25","JULHO-25","AGOSTO-25","SETEMBRO-25","OUTUBRO-25","NOVEMBRO-25","DEZEMBRO-25"];
+const mesesDoAno = ["JANEIRO-25", "FEVEREIRO-25", "MARÇO-25", "ABRIL-25", "MAIO-25", "JUNHO-25", "JULHO-25", "AGOSTO-25", "SETEMBRO-25", "OUTUBRO-25", "NOVEMBRO-25", "DEZEMBRO-25"];
 
 
 // #################################################################
 // ###  INICIALIZAÇÃO DOS SCRIPTS DA PÁGINA  #######################
 // #################################################################
 (async () => {
-//carregarMenuPrincipal();
+  //carregarMenuPrincipal();
 
-contaContabilListaInfo = await contasContabeisCarregarDados();
-orcamentoListaInfo = await orcamentosCarregarDados();
-unidadeListaInfo = await unidadesCarregarDados();
-centrosCustoListaInfo = await centrosCustoCarregarDados();
-rubricasListaInfo = await rubricasCarregarDados();
-// projetosListaInfo = await projetosCarregarDados();
-
-
-// ###  CARREGAR HTML ADICIONAL ########################
-let componentesHTML = "";
-
-componentesHTML += componentesHTML("orcamento", orcamentoListaInfo, true);
-componentesHTML += componentesHTML("orcamento", orcamentoListaInfo, true);
-
-componentesHTML += componentesHTML("orcamento", orcamentoListaInfo, true);
-
-componentesHTML += `<div class="input-dual-box">`;
-componentesHTML += componentesHTML("centros_custo", centrosCustoListaInfo, false);
-componentesHTML += componentesHTML("unidade", unidadeListaInfo, false);
-componentesHTML += `</div>`;
-
-componentesHTML += componentesHTML("conta_contabil", contaContabilListaInfo, false);
-
-componentesHTML += componentesHTML("classificacao", false);
-componentesHTML += componentesHTML("projeto", [], false);
-componentesHTML += componentesHTML("justificativa", [], false);
-
-const componentesEl = document.getElementById("formulario-campos");
-componentesEl.innerHTML = componentesHTML;
-
-const valorOrcadoEl = document.getElementById("mes_orcado");
-valorOrcadoEl.innerHTML = mesesDoAno.reduce((acc,mes)=> acc + `<option value="${mes}">${mes}</option>`,"<option value=''>-</option>");
+  contaContabilListaInfo = await contasContabeisCarregarDados();
+  orcamentoListaInfo = await orcamentosCarregarDados();
+  unidadeListaInfo = await unidadesCarregarDados();
+  centrosCustoListaInfo = await centrosCustoCarregarDados();
+  rubricasListaInfo = await rubricasCarregarDados();
+  // projetosListaInfo = await projetosCarregarDados();
 
 
+  // ###  CARREGAR HTML ADICIONAL ########################
+  let componentesHTML = "";
+  console.log({ orcamentoListaInfo })
+  componentesHTML += ComponentInputHTML.getHTML("select", "orcamento", "Orçamento", orcamentoListaInfo, ["id", "justificativa"]);
+  console.log(componentesHTML)
+  /*
+  componentesHTML += componentesHTML("orcamento", orcamentoListaInfo, true);
 
-// ###  ADICIONANDO OS EVENT LISTENERS DO HTML ########################
-const orcadoEl = document.getElementById("orcado");
-orcadoEl.addEventListener("change",(e)=>selecionaOrcado(e)); // EVENTO DO SELECT DO ORÇADO
+  componentesHTML += componentesHTML("orcamento", orcamentoListaInfo, true);
 
-const formEl = document.getElementById("form-container");
-formEl.addEventListener("submit",(e)=>enviarFormularioNovaRequisicao(e)); // EVENTO ENVIAR FORMULARIO
+  componentesHTML += `<div class="input-dual-box">`;
+  componentesHTML += componentesHTML("centros_custo", centrosCustoListaInfo, false);
+  componentesHTML += componentesHTML("unidade", unidadeListaInfo, false);
+  componentesHTML += `</div>`;
+
+  componentesHTML += componentesHTML("conta_contabil", contaContabilListaInfo, false);
+
+  componentesHTML += componentesHTML("classificacao", false);
+  componentesHTML += componentesHTML("projeto", [], false);
+  componentesHTML += componentesHTML("justificativa", [], false);
+*/
+  const componentesEl = document.getElementById("formulario-campos");
+  componentesEl.innerHTML = componentesHTML;
+
+  const valorOrcadoEl = document.getElementById("mes_orcado");
+  valorOrcadoEl.innerHTML = mesesDoAno.reduce((acc, mes) => acc + `<option value="${mes}">${mes}</option>`, "<option value=''>-</option>");
+
+
+
+  // ###  ADICIONANDO OS EVENT LISTENERS DO HTML ########################
+  const orcadoEl = document.getElementById("orcado");
+  orcadoEl.addEventListener("change", (e) => selecionaOrcado(e)); // EVENTO DO SELECT DO ORÇADO
+
+  const formEl = document.getElementById("form-container");
+  formEl.addEventListener("submit", (e) => enviarFormularioNovaRequisicao(e)); // EVENTO ENVIAR FORMULARIO
 
 
 })();
@@ -64,26 +66,26 @@ formEl.addEventListener("submit",(e)=>enviarFormularioNovaRequisicao(e)); // EVE
 // ###  TEXT AREA  #################################################
 // #################################################################
 function componentTextAreaHTML(nomeTextArea, disabled) {
-let textAreaHTML = "";
+  let textAreaHTML = "";
 
- switch (nomeTextArea) {
+  switch (nomeTextArea) {
 
-  case "justificativa":
-    textAreaHTML += `
+    case "justificativa":
+      textAreaHTML += `
     <div>
       <label class="form-input-label" for="justificativa">Justificativa:</label>
       <textarea id="justificativa" class="form-input form-textarea" name="justificativa" ${disabled && "disabled"}></textarea>
     </div>
     `;
-  break;
+      break;
 
 
-  default:
-  break;
+    default:
+      break;
 
- }
+  }
 
- return textAreaHTML;
+  return textAreaHTML;
 }
 
 
@@ -96,62 +98,62 @@ let textAreaHTML = "";
 // #################################################################
 // ###  SELECIONA ORÇADO - SIM/NÃO  ################################
 // #################################################################
-function selecionaOrcado(event){
-const contaContabilEl = document.getElementById("conta_contabil_id");
-const centrosCustoEl = document.getElementById("centro_custo_id");
-const classificacaoEl = document.getElementById("classificacao");
-const justificativaEl = document.getElementById("justificativa");
-const orcamentoEl = document.getElementById("orcamento_id");
-const unidadeEl = document.getElementById("unidade_id");
-const projetoEl = document.getElementById("projeto_id");
-const valorOrcadoEl = document.getElementById("mes_orcado");
+function selecionaOrcado(event) {
+  const contaContabilEl = document.getElementById("conta_contabil_id");
+  const centrosCustoEl = document.getElementById("centro_custo_id");
+  const classificacaoEl = document.getElementById("classificacao");
+  const justificativaEl = document.getElementById("justificativa");
+  const orcamentoEl = document.getElementById("orcamento_id");
+  const unidadeEl = document.getElementById("unidade_id");
+  const projetoEl = document.getElementById("projeto_id");
+  const valorOrcadoEl = document.getElementById("mes_orcado");
 
-if (event.target.value == "NAO") {
-  centrosCustoEl.selectedIndex = 0;
-  centrosCustoEl.removeAttribute("disabled");
+  if (event.target.value == "NAO") {
+    centrosCustoEl.selectedIndex = 0;
+    centrosCustoEl.removeAttribute("disabled");
 
-  contaContabilEl.selectedIndex = 0;
-  contaContabilEl.removeAttribute("disabled");
+    contaContabilEl.selectedIndex = 0;
+    contaContabilEl.removeAttribute("disabled");
 
-  classificacaoEl.selectedIndex = 0;
-  classificacaoEl.removeAttribute("disabled");
+    classificacaoEl.selectedIndex = 0;
+    classificacaoEl.removeAttribute("disabled");
 
-  justificativaEl.selectedIndex = 0;
-  justificativaEl.removeAttribute("disabled");
+    justificativaEl.selectedIndex = 0;
+    justificativaEl.removeAttribute("disabled");
 
-  orcamentoEl.selectedIndex = 0;
-  orcamentoEl.setAttribute("disabled",true);
+    orcamentoEl.selectedIndex = 0;
+    orcamentoEl.setAttribute("disabled", true);
 
-  unidadeEl.selectedIndex = 0;
-  unidadeEl.removeAttribute("disabled");
+    unidadeEl.selectedIndex = 0;
+    unidadeEl.removeAttribute("disabled");
 
-  projetoEl.selectedIndex = 0;
-  projetoEl.removeAttribute("disabled");
+    projetoEl.selectedIndex = 0;
+    projetoEl.removeAttribute("disabled");
 
- valorOrcadoEl.innerHTML = mesesDoAno.reduce((acc,mes)=> acc + `<option value="${mes}">${mes}</option>`,"<option value=''>-</option>");
+    valorOrcadoEl.innerHTML = mesesDoAno.reduce((acc, mes) => acc + `<option value="${mes}">${mes}</option>`, "<option value=''>-</option>");
 
-} else {
-  centrosCustoEl.selectedIndex = 0;
-  centrosCustoEl.setAttribute("disabled",true);
+  } else {
+    centrosCustoEl.selectedIndex = 0;
+    centrosCustoEl.setAttribute("disabled", true);
 
-  contaContabilEl.selectedIndex = 0;
-  contaContabilEl.setAttribute("disabled",true);
+    contaContabilEl.selectedIndex = 0;
+    contaContabilEl.setAttribute("disabled", true);
 
-  classificacaoEl.selectedIndex = 0;
-  classificacaoEl.setAttribute("disabled",true);
+    classificacaoEl.selectedIndex = 0;
+    classificacaoEl.setAttribute("disabled", true);
 
-  justificativaEl.selectedIndex = 0;
-  justificativaEl.setAttribute("disabled",true);
+    justificativaEl.selectedIndex = 0;
+    justificativaEl.setAttribute("disabled", true);
 
-  orcamentoEl.selectedIndex = 0;
-  orcamentoEl.removeAttribute("disabled");
+    orcamentoEl.selectedIndex = 0;
+    orcamentoEl.removeAttribute("disabled");
 
-  unidadeEl.selectedIndex = 0;
-  unidadeEl.setAttribute("disabled",true);
+    unidadeEl.selectedIndex = 0;
+    unidadeEl.setAttribute("disabled", true);
 
-  projetoEl.selectedIndex = 0;
-  projetoEl.setAttribute("disabled",true);
-}
+    projetoEl.selectedIndex = 0;
+    projetoEl.setAttribute("disabled", true);
+  }
 
 }
 
@@ -159,77 +161,77 @@ if (event.target.value == "NAO") {
 // #################################################################
 // ###  ORÇAMENTO SELECIONADO  #####################################
 // #################################################################
-async function orcamentoSelecionado(id){
+async function orcamentoSelecionado(id) {
 
-const contaContabilEl = document.getElementById("conta_contabil_id");
-const centrosCustoEl = document.getElementById("centro_custo_id");
-const classificacaoEl = document.getElementById("classificacao");
-const justificativaEl = document.getElementById("justificativa");
-const orcamentoEl = document.getElementById("orcamento_id");
-const unidadeEl = document.getElementById("unidade_id");
-const projetoEl = document.getElementById("projeto_id");
-const valorOrcadoEl = document.getElementById("mes_orcado");
+  const contaContabilEl = document.getElementById("conta_contabil_id");
+  const centrosCustoEl = document.getElementById("centro_custo_id");
+  const classificacaoEl = document.getElementById("classificacao");
+  const justificativaEl = document.getElementById("justificativa");
+  const orcamentoEl = document.getElementById("orcamento_id");
+  const unidadeEl = document.getElementById("unidade_id");
+  const projetoEl = document.getElementById("projeto_id");
+  const valorOrcadoEl = document.getElementById("mes_orcado");
 
-const orcamentoInfo = orcamentoListaInfo.find((orc)=> orc.id == id);
+  const orcamentoInfo = orcamentoListaInfo.find((orc) => orc.id == id);
 
-if (orcamentoInfo) {
- contaContabilEl.value = orcamentoInfo.conta_contabil_id;
- centrosCustoEl.value = orcamentoInfo.centro_custo_id; 
- justificativaEl.value = orcamentoInfo.justificativa;
- classificacaoEl.value = orcamentoInfo.classificacao;
+  if (orcamentoInfo) {
+    contaContabilEl.value = orcamentoInfo.conta_contabil_id;
+    centrosCustoEl.value = orcamentoInfo.centro_custo_id;
+    justificativaEl.value = orcamentoInfo.justificativa;
+    classificacaoEl.value = orcamentoInfo.classificacao;
 
- const centroCustoFind = centrosCustoListaInfo.find((ccusto) => ccusto.id == orcamentoInfo.centro_custo_id);
- unidadeEl.value = centroCustoFind.unidade_id;
+    const centroCustoFind = centrosCustoListaInfo.find((ccusto) => ccusto.id == orcamentoInfo.centro_custo_id);
+    unidadeEl.value = centroCustoFind.unidade_id;
 
- if(orcamentoInfo.projeto_id != "NULL"){
-  projetoEl.value = orcamentoInfo.projeto_id;
- }
-
-
- const orcamentoValores = await orcamentoValoresCarregarDados();
- valorOrcadoEl.innerHTML = `<option value="">-</option>`;
-
- orcamentoValores.forEach((orcado)=>{
-  const optionEl = document.createElement("option");
-  optionEl.value = orcado.id;
-  optionEl.innerText = orcado.mes + " - R$" + orcado.valor;
-  valorOrcadoEl.appendChild(optionEl)
- })
+    if (orcamentoInfo.projeto_id != "NULL") {
+      projetoEl.value = orcamentoInfo.projeto_id;
+    }
 
 
-} else {
- contaContabilEl.value = "";
- centrosCustoEl.value = "";
- justificativaEl.value = "";
- classificacaoEl.value = "";
- unidadeEl.value = "";
- projetoEl.value = "";
+    const orcamentoValores = await orcamentoValoresCarregarDados();
+    valorOrcadoEl.innerHTML = `<option value="">-</option>`;
 
- const optionEl = document.createElement("option");
- optionEl.value = "";
- optionEl.innerText = "-";
- valorOrcadoEl.innerText = "";
- valorOrcadoEl.appendChild(optionEl);
- valorOrcadoEl.selected = "";
+    orcamentoValores.forEach((orcado) => {
+      const optionEl = document.createElement("option");
+      optionEl.value = orcado.id;
+      optionEl.innerText = orcado.mes + " - R$" + orcado.valor;
+      valorOrcadoEl.appendChild(optionEl)
+    })
 
- centrosCustoEl.selectedIndex = 0;
- centrosCustoEl.setAttribute("disabled",true);
 
- classificacaoEl.selectedIndex = 0;
- classificacaoEl.setAttribute("disabled",true);
+  } else {
+    contaContabilEl.value = "";
+    centrosCustoEl.value = "";
+    justificativaEl.value = "";
+    classificacaoEl.value = "";
+    unidadeEl.value = "";
+    projetoEl.value = "";
 
- justificativaEl.selectedIndex = 0;
- justificativaEl.setAttribute("disabled",true);
+    const optionEl = document.createElement("option");
+    optionEl.value = "";
+    optionEl.innerText = "-";
+    valorOrcadoEl.innerText = "";
+    valorOrcadoEl.appendChild(optionEl);
+    valorOrcadoEl.selected = "";
 
- orcamentoEl.selectedIndex = 0;
- orcamentoEl.removeAttribute("disabled");
+    centrosCustoEl.selectedIndex = 0;
+    centrosCustoEl.setAttribute("disabled", true);
 
- unidadeEl.selectedIndex = 0;
- unidadeEl.setAttribute("disabled",true);
+    classificacaoEl.selectedIndex = 0;
+    classificacaoEl.setAttribute("disabled", true);
 
- projetoEl.selectedIndex = 0;
- projetoEl.setAttribute("disabled",true);
-}
+    justificativaEl.selectedIndex = 0;
+    justificativaEl.setAttribute("disabled", true);
+
+    orcamentoEl.selectedIndex = 0;
+    orcamentoEl.removeAttribute("disabled");
+
+    unidadeEl.selectedIndex = 0;
+    unidadeEl.setAttribute("disabled", true);
+
+    projetoEl.selectedIndex = 0;
+    projetoEl.setAttribute("disabled", true);
+  }
 
 }
 
@@ -242,20 +244,20 @@ if (orcamentoInfo) {
 // #################################################################
 // ###  ENVIAR FORMULARIO  #########################################
 // #################################################################
-async function enviarFormularioNovaRequisicao(e){
- e.preventDefault();
- const tamanho = e.target.length - 1;
- 
- const reqInfo = {}
- for(let pos=0; pos < tamanho; pos++) {
-  reqInfo[e.target[pos].name] = e.target[pos].value ? e.target[pos].value: "NULL"; 
- }
+async function enviarFormularioNovaRequisicao(e) {
+  e.preventDefault();
+  const tamanho = e.target.length - 1;
 
- const novaRequisicao = await salvarNovaRequisicao(reqInfo);
+  const reqInfo = {}
+  for (let pos = 0; pos < tamanho; pos++) {
+    reqInfo[e.target[pos].name] = e.target[pos].value ? e.target[pos].value : "NULL";
+  }
 
- if(novaRequisicao.codStatus == 200){
-  openNotification()
- }
+  const novaRequisicao = await API.reqNovo(reqInfo);
+  console.log({ novaRequisicao })
+  if (novaRequisicao.codStatus == 200) {
+    openNotification()
+  }
 }
 
 
@@ -265,13 +267,13 @@ async function enviarFormularioNovaRequisicao(e){
 // ###  NOTIFICAÇÃO  ###############################################
 // #################################################################
 function openNotification() {
- const notificationEl = document.getElementById("notification-container");
- notificationEl.style.display = "flex";
+  const notificationEl = document.getElementById("notification-container");
+  notificationEl.style.display = "flex";
 }
 
 function closeNotification() {
- const notificationEl = document.getElementById("notification-container");
- window.location.reload();
+  const notificationEl = document.getElementById("notification-container");
+  window.location.reload();
 }
 
 

@@ -79,44 +79,14 @@
 }
 
 
-// ##############################################
+/* ##############################################
 // ###  INPUT: ESPECÍFICO DA PÁGINA  ############
 // ##############################################
-
+*/
 #orcado-box {
  width: 50%;
 }
 
-
-/* ##############################################
-// ###  AÇÕES  ##################################
-// ##############################################
-*/
-.navbar-acoes-container {
- display: flex;
- flex-wrap: wrap;
- padding: 8px;
- gap: 12px;
-}
-.navbar-acoes-botoes-box {
- display: flex;
- gap: 12px;
-}
-.navbar-acoes-botao {
- display: flex;
- align-items: center;
- border-radius: 6px;
- border: none;
- padding: 8px; 
-}
-.navbar-acoes-botao:hover {
- background-color: #e0e0e0;
- cursor: pointer;
-}
-.navbar-acoes-botao-img {
- width: 32px;
- height: 32px;
-}
 
 
 /* ##############################################

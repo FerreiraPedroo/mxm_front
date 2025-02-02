@@ -1,74 +1,74 @@
 // AS ROTAS CARREGA O HTML DAS '/paginas/*****/arquivo.js
 
-window.roteador = function roteador(rota, param) {
-console.log({rota,param})
-  switch(rota) {
-    case "requisicao-lista":
-        window.location.replace("/requisicao-lista");
-    break;
+function roteador(rota, param) {
+ console.log("### ROTEADOR:", rota, param)
+ switch (rota) {
+  case "requisicao-lista":
+   window.location.replace("/requisicao-lista");
+   break;
 
-    case "requisicao-novo":
-        window.location.replace("/requisicao-novo");
-    break;
+  case "requisicao-novo":
+   window.location.replace("/requisicao-novo");
+   break;
 
-    case "requisicao-selecionada":
-        window.location.replace(`/requisicao-selecionada?requisicaoID=${param}`);
-    break;
+  case "requisicao-selecionada":
+   window.location.replace(`/requisicao-selecionada?requisicaoID=${param}`);
+   break;
 
-    case "unidade-novo":
+  case "unidade-novo":
 
-    break;
+   break;
 
-    case "centrocusto-novo":
+  case "centrocusto-novo":
 
-    break;
+   break;
 
-    case "contacontabil-novo":
+  case "contacontabil-novo":
 
-    break;
+   break;
 
-    case "fornecedor-novo":
+  case "fornecedor-novo":
 
-    break;
+   break;
 
-    case "rubrica-novo":
+  case "rubrica-novo":
 
-    break;
+   break;
 
-    case "centrocusto-novo":
+  case "centrocusto-novo":
 
-    break;
+   break;
 
-    case "projeto-novo":
+  case "projeto-novo":
 
-    break;
+   break;
 
-    case "notafiscal-novo":
+  case "notafiscal-novo":
 
-    break;
+   break;
 
-    case "orcamento-novo":
-        window.location.replace("/orcamento-novo");
-    break;
+  case "orcamento-novo":
+   window.location.replace("/orcamento-novo");
+   break;
 
-    case "orcamento-lista":
-        window.location.replace("/orcamento-lista");
-    break;
+  case "orcamento-lista":
+   window.location.replace("/orcamento-lista");
+   break;
 
-    case "centrocusto":
+  case "centrocusto":
 
-    break;
+   break;
 
-    case "centrocusto":
+  case "centrocusto":
 
-    break;
+   break;
 
-    case "centrocusto":
+  case "centrocusto":
 
-    break;
+   break;
 
-    
 
-  }
+
+ }
 
 }

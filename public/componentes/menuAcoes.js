@@ -2,30 +2,23 @@
 // ###  MENU AÇOES  ################################################
 // ###  seleciona os htmls dos menus diferentes ####################
 // #################################################################
-function menuAcoes(nome) {
+class MenuAcoes {
+  static getBotoes(lista = []) {
+    let HTML = `<div class="navbar-acoes-container">`;
 
- let menuAcoesHTML = "";
-  switch(nome){
-   case "requisicao-lista":
-    menuAcoesHTML = requisicaoLista();
-    break;
-   case "requisicao-selecionada":
-    menuAcoesHTML = requisicaoSelecionada();
-   break;
-   case "orcamento-lista":
-    menuAcoesHTML = orcamentoLista();
-   break;
-   default:
-   break;
+    const botoes = lista.reduce((acc, botao) => {
+      return acc += `      
+       <div class="navbar-acoes-botoes-box">
+        <button onclick="${botao.callBack}" class="navbar-acoes-botao"><img src="${botao.icone}" class="navbar-acoes-botao-img"/>${botao.nome}</button>
+       </div>`
+    }, "")
+
+    HTML += botoes;
+    HTML += `</div>`
+
+    return HTML;
   }
-
- return menuAcoesHTML;
-  
- // eventoToggleMenuAcoes()
-
 }
-
-
 
 // #################################################################
 // ###  REQUISIÇÃO LISTA  ##########################################
@@ -35,34 +28,17 @@ function requisicaoLista() {
     <div class="navbar-acoes-buttons">
       <button onclick="roteador('requisicao-novo')" ><img src="./assets/imagens/requisicaoLista/requisicao.png">Nova requisição</button>
     </div>
-  `; 
+  `;
 }
 
-// #################################################################
-// ###  REQUISIÇÃO SELECIONADA  ####################################
-// #################################################################
-function requisicaoSelecionada() {
-  return `
-    <div class="navbar-acoes-buttons">
-      <button onclick="roteador('requisicao-novo')" ><img src="./assets/imagens/requisicaoSelecionada/requisicao.png" />Informações</button>
-    </div>
-    <div class="navbar-acoes-buttons">
-      <button onclick="roteador('requisicao-novo')" ><img src="./assets/imagens/requisicaoSelecionada/requisicao.png" />Pedidos de compras</button>
-    </div>
-    <div class="navbar-acoes-buttons">
-      <button onclick="roteador('requisicao-novo')" ><img src="./assets/imagens/requisicaoSelecionada/requisicao.png" />Notas fiscals</button>
-    </div>
-
-  `; 
-}
 
 
 
 // #################################################################
 // ###  REQUISIÇÃO LISTA  ##########################################
 // #################################################################
-function orcamentoLista(){
- return `
+function orcamentoLista() {
+  return `
   <div class="navbar-acoes-buttons">
    <button><i class="fas fa-share-alt"></i>Novo orçamento</button>
   </div>
@@ -70,8 +46,12 @@ function orcamentoLista(){
 }
 
 
-function modelo (){
-return `
+
+
+
+
+function modelo() {
+  return `
   <nav class="navbar-acoes">
 
     <div class="navbar-acoes-buttons">
@@ -101,13 +81,9 @@ return `
     </div>
 
   </nav>
-`; 
+`;
 
 }
-
-
-
-
 
 
 // #################################################################
@@ -119,7 +95,7 @@ function eventoToggleMenuAcoes() {
   const dropdownMenu = document.querySelector(".dropdown-acoes-menu");
 
   dropdownToggle.addEventListener("click", () => {
-    dropdownMenu.style.display = 
+    dropdownMenu.style.display =
       dropdownMenu.style.display === "block" ? "none" : "block";
   });
 

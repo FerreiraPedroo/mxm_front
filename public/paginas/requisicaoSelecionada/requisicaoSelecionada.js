@@ -1,26 +1,31 @@
 const urlParams = new URLSearchParams(window.location.search);
 const requisicaoID = urlParams.get("requisicaoID");
 
-const mesesDoAno = ["JANEIRO-25","FEVEREIRO-25","MARÇO-25","ABRIL-25","MAIO-25","JUNHO-25","JULHO-25","AGOSTO-25","SETEMBRO-25","OUTUBRO-25","NOVEMBRO-25","DEZEMBRO-25"];
-
 let requisicaoInfo = null;
+
+const mesesDoAno = ["JANEIRO-25", "FEVEREIRO-25", "MARÇO-25", "ABRIL-25", "MAIO-25", "JUNHO-25", "JULHO-25", "AGOSTO-25", "SETEMBRO-25", "OUTUBRO-25", "NOVEMBRO-25", "DEZEMBRO-25"];
 
 
 // #################################################################
 // ###  INICIALIZAÇÃO DOS SCRIPTS DA PÁGINA  #######################
 // #################################################################
 (async () => {
+ // API: CARREGA OS DADOS DA REQUISIÇÃO SELECIONADA.  ###############
+ requisicaoInfo = await API.reqSelecionada(requisicaoID);
 
-// API: CARREGA OS DADOS DA REQUISIÇÃO SELECIONADA.  ###############
-requisicaoInfo = await API.reqSelecionada(requisicaoID);
+ document.getElementById("page-title").innerHTML = `Informações da requisição: REQ ${requisicaoID}`;
 
-// HTML: CARREGA O HTML DA TABS (./componentes/menuTabs.js)  #######
-const tabEl = document.getElementById("tabs");
-tabEl.innerHTML = menuTabs("requisicao-selecionada");
+ // HTML: CARREGA O HTML DA TABS (./componentes/menuTabs.js)  #######
+ const botoesLista = [
+  { nome: "Informações", icone: "./assets/imagens/requisicaoSelecionada/requisicao-informacoes-32.png", callBack: "tabChangePageHTML('informacoes')" },
+  { nome: "Pedidos de compras", callBack: "tabChangePageHTML('pedidos-compras')", icone: "./assets/imagens/comum/pedido-compras-32.png" },
+  { nome: "Notas fiscals", icone: "./assets/imagens/comum/nota-fiscal-32.png", callBack: "tabChangePageHTML('notas-fiscais')", },
+  { nome: "Materiais", icone: "./assets/imagens/comum/material-32.png", callBack: "tabChangePageHTML('materiais')" }
+ ]
+ document.getElementById("tabs").innerHTML = MenuTabs.getBotoes(botoesLista);
 
-// HTML: CARREGA AS INFORMAÇÕES DA PÁGINA DA TAB INICIAL  ##########
-const componentesEl = document.getElementById("campos");
-componentesEl.innerHTML = tabInformacoes();
+ // HTML: CARREGA AS INFORMAÇÕES DA PÁGINA DA TAB INICIAL  ##########
+ document.getElementById("campos").innerHTML = tabInformacoes();
 
 })()
 
@@ -28,7 +33,7 @@ componentesEl.innerHTML = tabInformacoes();
 // #################################################################
 // ###  FUNÇÃO: PARA MUDAR O HTML DAS TABS  ########################
 // #################################################################
-async function changePageTabHTML(tab) {
+async function tabChangePageHTML(tab) {
 
  const urlParams = new URLSearchParams(window.location.search);
  const requisicaoID = urlParams.get("requisicaoID");
@@ -36,23 +41,29 @@ async function changePageTabHTML(tab) {
  let acoesEl = document.getElementById("acoes");
  let tabEl = document.getElementById("campos");
 
- switch(tab) {
+ acoesEl.innerHTML = "";
+
+ switch (tab) {
   case "informacoes":
    tabEl.innerHTML = tabInformacoes();
-  break;
-  
+   break;
+
   case "pedidos-compras":
    tabEl.innerHTML = tabPedidosCompras();
-  break;
-  
+   break;
+
   case "notas-fiscais":
-   acoesEl.innerHTML = await menuAcoesNotasFiscais();
+   const botoesAcoes = [
+    { nome: "ADICIONAR NOTA FISCAL", icone: `./assets/imagens/comum/adicionar-32.png`, callBack: `modalOpen('requisicao-selecionada-nota-fiscal')` }
+   ];
+
+   acoesEl.innerHTML = MenuAcoes.getBotoes(botoesAcoes);
    tabEl.innerHTML = await tabNotasFiscais({ requisicaoID });
-  break;
+   break;
 
   case "materiais":
-   tabEl.innerHTML = tabMateriais({ requisicaoID });
-  break;
+   tabEl.innerHTML = await tabMateriais({ requisicaoID });
+   break;
 
  }
 }
@@ -80,7 +91,7 @@ function tabInformacoes() {
  HTML += `</div>`;
 
  HTML += `<div class="input-dual-box">`;
- HTML += componenteInputReadOnlyHTML("centros_custo", "Centro de custo:", `${requisicaoInfo.centro_custo.codigo} - ${requisicaoInfo.centro_custo.nome} - ${requisicaoInfo.centro_custo.unidade}` );
+ HTML += componenteInputReadOnlyHTML("centros_custo", "Centro de custo:", `${requisicaoInfo.centro_custo.codigo} - ${requisicaoInfo.centro_custo.nome} - ${requisicaoInfo.centro_custo.unidade}`);
 
  HTML += componenteInputReadOnlyHTML("unidade", "Unidade:", requisicaoInfo.unidade.nome);
  HTML += `</div>`;
@@ -123,18 +134,18 @@ async function tabNotasFiscais({ requisicaoID }) {
 
  const notasFiscais = await API.reqSelecionadaNFs(requisicaoID);
 
- if(notasFiscais){
+ if (notasFiscais) {
   requisicaoNotasFiscais = notasFiscais.data
  }
 
  const cabecalhos = [
-  { coluna: "RAZÃO SOCIAL", linha: ["fornecedor","razao_social"], tamanhoClasse: "160x grow-4" },
+  { coluna: "RAZÃO SOCIAL", linha: ["fornecedor", "razao_social"], tamanhoClasse: "160x grow-4" },
   { coluna: "Nº NF", linha: ["nf_numero"], tamanhoClasse: "80x" },
   { coluna: "VALOR R$", linha: ["valor"], tamanhoClasse: "80x" },
   { coluna: "Nº PEDIDO", linha: ["pedido_compras"], tamanhoClasse: "80x" },
  ]
 
- HTML = tabelaHTML(cabecalhos, requisicaoNotasFiscais);
+ const HTML = tabelaHTML(null, cabecalhos, requisicaoNotasFiscais);
 
  return HTML;
 }
@@ -143,11 +154,11 @@ async function tabNotasFiscais({ requisicaoID }) {
 // ----------------------------------------------------------------
 // --- TAB: MATERIAIS  --------------------------------------------
 // ----------------------------------------------------------------
-async function tabMateriais({requisicaoID}) {
+async function tabMateriais({ requisicaoID }) {
  let requisicaoMateriais = [];
 
- const materiais = await requisicaoMateriais({ requisicaoID });
- if(materiais){
+ const materiais = await API.reqMateriais({ requisicaoID });
+ if (materiais) {
   requisicaoMateriais = materiais;
  }
 
@@ -157,29 +168,8 @@ async function tabMateriais({requisicaoID}) {
   { coluna: "QUANTIDADE", linha: ["quantidade"], tamanhoClasse: "g-col-size-80" }
  ]
 
- HTML = tabelaHTML(cabecalhos, requisicaoNotasFiscais);
-
+ const HTML = tabelaHTML(null, cabecalhos, requisicaoMateriais);
+ console.log(HTML)
  return HTML;
 }
 
-
-
-// #################################################################
-// #################################################################
-// ###  MENU AÇOES  ################################################
-// ###  seleciona os htmls dos menus diferentes ####################
-// #################################################################
-// #################################################################
-// ----------------------------------------------------------------
-// --- MENU AÇOES: NOTAS FISCAIS  -------------------------------------
-// ----------------------------------------------------------------
-
-function menuAcoesNotasFiscais() {
- return `
-  <div class="navbar-acoes-container">
-   <div class="navbar-acoes-botoes-box">
-    <button onclick="modalOpen('requisicao-selecionada-nota-fiscal')" class="navbar-acoes-botao"><img src="./assets/imagens/comum/adicionar-32.png" class="navbar-acoes-botao-img"/>ADICIONAR NOTA FISCAL</button>
-   </div>
-  </div>
-  `; 
-}

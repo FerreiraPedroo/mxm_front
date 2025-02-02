@@ -1,13 +1,47 @@
 [
- {
-  "id":1,
-  "nf_numero":100,
-  "valor":1000.00,
-  "fornecedor_id":1,
-  "dt_recebimento":"20/10/2099",
-  "observacao":"observação da nota fiscal de teste",
-  "req_id":1,
-  "pedido_compras":45000,
-  "materiais": [1,2,3]
- }
+  {
+    "id": 1,
+    "nf_numero": 100,
+    "valor": 1000,
+    "fornecedor_id": 1,
+    "dt_recebimento": "20/10/2099",
+    "observacao": "observação da nota fiscal de teste",
+    "req_id": 1,
+    "pedido_compras": 45000,
+    "materiais": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "dt_recebimento": "2025-02-02",
+    "pedido_compras": "100",
+    "nf_numero": "550",
+    "valor": "4000",
+    "fornecedor_id": "1",
+    "observacao": "Nota fiscal de teste",
+    "req_id": "1",
+    "id": 2
+  },
+  {
+    "dt_recebimento": "2025-02-13",
+    "pedido_compras": "4100",
+    "nf_numero": "210",
+    "valor": "4500",
+    "fornecedor_id": "1",
+    "observacao": "Teste segundo",
+    "req_id": "1",
+    "id": 3
+  },
+  {
+    "dt_recebimento": "2025-02-06",
+    "pedido_compras": "5900",
+    "nf_numero": "20",
+    "valor": "5000",
+    "fornecedor_id": "3",
+    "observacao": "Terceiro teste",
+    "req_id": "1",
+    "id": 4
+  }
 ]

@@ -2,94 +2,97 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerenciador de Arquivos</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./paginas/requisicaoNovo/requisicaoNovo.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Gerenciador de Arquivos</title>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="./assets/css/main.css">
+ <link rel="stylesheet" href="./paginas/requisicaoNovo/requisicaoNovo.css">
 </head>
 
 <body>
 
-<header id="head"></header>
-<div id="notification-container">
- <div id="notification-message">
-  <p id="notification-text">Requisição registrada com sucesso.</p>
-  <button id="notification-button" onClick="closeNotification()">Fechar</button>
+ <header id="head"></header>
+ <div id="notification-container">
+  <div id="notification-message">
+   <p id="notification-text">Requisição registrada com sucesso.</p>
+   <button id="notification-button" onClick="closeNotification()">Fechar</button>
+  </div>
  </div>
-</div>
 
-<main id="main-container">
+ <main id="main-container">
   <h2 id="page-title">Nova requisição</h2>
 
-<!--  <nav id="navbar-acoes" class="navbar-acoes"></nav>  -->
+  <!--  <nav id="navbar-acoes" class="navbar-acoes"></nav>  -->
 
   <form id="form-container" method="get" onsubmit="(e)=>enviarFormularioNovaRequisicao(e)">
-   
+
    <div class="input-dual-box">
     <div class="input-box">
-      <label class="form-input-label" for="req">Nº Requisição:</label>
-      <input type="text" id="req" class="form-input" name="req" >
+     <label class="form-input-label" for="req">Nº Requisição:</label>
+     <input type="text" id="req" class="form-input" name="req">
     </div>
 
     <div class="input-box">
-      <label class="form-input-label" for="dt_envio_req">Data de envio:</label>
-      <input type="date" id="dt_envio_req" class="form-input" name="dt_envio_req">
-      </input>
+     <label class="form-input-label" for="dt_envio_req">Data de envio:</label>
+     <input type="date" id="dt_envio_req" class="form-input" name="dt_envio_req">
+     </input>
     </div>
-  </div>
+   </div>
 
-    <div class="input-box">
-      <label class="form-input-label" for="tipo_requisicao">Tipo de requisição:</label>
-      <select type="text" id="tipo_requisicao" class="form-input" name="tipo_requisicao">
-        <option value="">-</option>
-        <option value="MATERIAL">MATERIAL</option>
-        <option value="SERVIÇO">SERVIÇO</option>
-      </select>
-    </div>
+   <div class="input-box">
+    <label class="form-input-label" for="tipo_requisicao">Tipo de requisição:</label>
+    <select type="text" id="tipo_requisicao" class="form-input" name="tipo_requisicao">
+     <option value="">-</option>
+     <option value="MATERIAL">MATERIAL</option>
+     <option value="SERVIÇO">SERVIÇO</option>
+    </select>
+   </div>
 
-    <div>
-      <label class="form-input-label" for="orcado">Orçado:</label>
-      <select id="orcado" class="form-input" name="orcado">
-        <option value="SIM">SIM</option>
-        <option value="NAO" selected>NÃO</option>
-      </select>
-    </div>
+   <div>
+    <label class="form-input-label" for="orcado">Orçado:</label>
+    <select id="orcado" class="form-input" name="orcado">
+     <option value="SIM">SIM</option>
+     <option value="NAO" selected>NÃO</option>
+    </select>
+   </div>
 
-    <hr class="form-hr"></hr>
-    <div id="formulario-campos"></div>
-    <hr class="form-hr"></hr>
+   <hr class="form-hr">
+   </hr>
+   <div id="formulario-campos"></div>
+   <hr class="form-hr">
+   </hr>
 
-    <div>
-      <label class="form-input-label" for="urgente">Urgente:</label>
-      <select id="urgente" class="form-input" name="urgente">
-        <option value="SIM">SIM</option>
-        <option value="NAO" selected>NAO</option>
-      </select>
-    </div>
+   <div>
+    <label class="form-input-label" for="urgente">Urgente:</label>
+    <select id="urgente" class="form-input" name="urgente">
+     <option value="SIM">SIM</option>
+     <option value="NAO" selected>NAO</option>
+    </select>
+   </div>
 
-    <div>
-      <label class="form-input-label" for="mes_orcado">Custo p/mês:</label>
-      <select type="text" id="mes_orcado" class="form-input" name="mes_orcado">
-      </select>
-    </div>
+   <div>
+    <label class="form-input-label" for="mes_orcado">Custo p/mês:</label>
+    <select type="text" id="mes_orcado" class="form-input" name="mes_orcado">
+    </select>
+   </div>
 
-    <div>
-      <label class="form-input-label" for="detalhes_pedido">Detalhes do Pedido:</label>
-      <textarea id="detalhes-pedido" class="form-input form-textarea" name="detalhes_pedido"></textarea>
-    </div>
+   <div>
+    <label class="form-input-label" for="detalhes_pedido">Detalhes do Pedido:</label>
+    <textarea id="detalhes-pedido" class="form-input form-textarea" name="detalhes_pedido"></textarea>
+   </div>
 
-    <div>
-      <label class="form-input-label" for="observacao">Observações:</label>
-      <textarea id="observacao" class="form-input form-textarea" name="observacao"></textarea>
-    </div>
-    <input type="hidden" id="status" name="status" value="ATIVO"/>
-    <button type="submit" id="submitBtn" class="form-button">Enviar</button>
+   <div>
+    <label class="form-input-label" for="observacao">Observações:</label>
+    <textarea id="observacao" class="form-input form-textarea" name="observacao"></textarea>
+   </div>
+   <input type="hidden" id="status" name="status" value="ATIVO" />
+   <button type="submit" id="submitBtn" class="form-button">Enviar</button>
   </form>
-</main>
+ </main>
 
-<script src="./index.js"></script>
+ <script src="./index.js"></script>
 
 </body>
+
 </html>
