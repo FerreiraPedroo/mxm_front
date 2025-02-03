@@ -10,12 +10,13 @@ const mesesDoAno = ["JANEIRO-25", "FEVEREIRO-25", "MARÇO-25", "ABRIL-25", "MAIO
 // ###  INICIALIZAÇÃO DOS SCRIPTS DA PÁGINA  #######################
 // #################################################################
 (async () => {
- // API: CARREGA OS DADOS DA REQUISIÇÃO SELECIONADA.  ###############
+ // API: CARREGA OS DADOS DA REQUISIÇÃO SELECIONADA
  requisicaoInfo = await API.reqSelecionada(requisicaoID);
 
+ // TITULO DA PÁGINA
  document.getElementById("page-title").innerHTML = `Informações da requisição: REQ ${requisicaoID}`;
 
- // HTML: CARREGA O HTML DA TABS (./componentes/menuTabs.js)  #######
+ // HTML: CARREGA O HTML DA TABS (./componentes/menuTabs.js)
  const botoesLista = [
   { nome: "Informações", icone: "./assets/imagens/requisicaoSelecionada/requisicao-informacoes-32.png", callBack: "tabChangePageHTML('informacoes')" },
   { nome: "Pedidos de compras", callBack: "tabChangePageHTML('pedidos-compras')", icone: "./assets/imagens/comum/pedido-compras-32.png" },
@@ -24,7 +25,7 @@ const mesesDoAno = ["JANEIRO-25", "FEVEREIRO-25", "MARÇO-25", "ABRIL-25", "MAIO
  ]
  document.getElementById("tabs").innerHTML = MenuTabs.getBotoes(botoesLista);
 
- // HTML: CARREGA AS INFORMAÇÕES DA PÁGINA DA TAB INICIAL  ##########
+ // HTML: CARREGA AS INFORMAÇÕES DA PÁGINA DA TAB INICIAL
  document.getElementById("campos").innerHTML = tabInformacoes();
 
 })()

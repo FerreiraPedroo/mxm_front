@@ -15,7 +15,8 @@ class MenuTabs {
  static botaoSelecionado(botaoSelecionado) {
   const botoes = document.getElementsByClassName("tabs-buttons");
   for(botao in botoes){
-    botao.classList.remove("tabs-button-selected");
+   console.log(botao)
+   botao.classList.remove("tabs-button-selected");
   }
 
   botaoSelecionado.classList.add("tabs-button-selected")
