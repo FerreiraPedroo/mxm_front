@@ -1,0 +1,34 @@
+#cabecalho {
+ display: flex;
+ background-color: #ddd;
+ gap: 12px;
+}
+.cabecalho-item {
+ padding: 12px 8px;
+}
+
+
+
+#items {
+}
+.item-box {
+ display: flex;
+ background-color: #fff;
+ gap: 12px;
+}
+.item {
+ padding: 8px;
+}
+.item-requisicao {
+ min-width: 128px;
+ width: 128px;
+ max-width: 128px;
+}
+.item-centro-custo {
+ min-width: 352px;
+ width: 352px;
+ max-width: 352px;
+}
+.item-justificativa {
+ width: 100%;
+}

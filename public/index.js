@@ -1,33 +1,20 @@
 // #################################################################
 // ###  CAMINHOS DOS ARQUIVOS DE SCRIPT  ###########################
 // #################################################################
-const arquivoPorLocalizacao = {
- "/requisicao-lista": "./paginas/requisicaoLista/requisicaoLista.js",
- "/requisicao-novo": "./paginas/requisicaoNovo/requisicaoNovo.js",
- "/requisicao-selecionada": "./paginas/requisicaoSelecionada/requisicaoSelecionada.js",
- "/orcamento-lista": "./paginas/orcamentoLista/orcamentoLista.js",
- "/orcamento-novo": "./paginas/orcamentoNovo/orcamentoNovo.js",
-}
+
 const arquivosDeScriptInicial = [
- "./roteador.js",
  "./servicos/API.js",
- "./componentes/componentesHTML.js",
- "./componentes/menuPrincipal.js",
- "./componentes/menuAcoes.js",
- "./componentes/menuTabs.js",
- "./componentes/modal.js",
- "./componentes/scriptsComponentes.js",
- "./componentes/tabelas/tabela.js",
 ]
 
-const arquivosDeScriptPaginas = [];
+const arquivoPorLocalizacao = {
+ "/lista-requisicoes.html": "./assets/script/lista-requisicoes.js"
+}
 
-// SE O PATHNAME EXISTIR NO ARQUIVO DE LOCALIZAÇÃO ADICIONA NO ARQUIVO DE SCRIPTS DA PAGINA
+const arquivosDeScriptPaginas = [];
 const arquivoDaPagina = arquivoPorLocalizacao[window.location.pathname];
 if(arquivoDaPagina){
  arquivosDeScriptPaginas.push(arquivoDaPagina)
 }
-
 
 
 // #################################################################
@@ -47,7 +34,6 @@ function carregarScriptsParaHTML(script){
 
 async function carregarScripts(arquivoDeScripts, posicaoArqScript = 0) {
  const arquivoCarregado = await carregarScriptsParaHTML(arquivoDeScripts[posicaoArqScript]);
- // console.log(`CARREGADO:${arquivoCarregado}`);
  if(posicaoArqScript < arquivoDeScripts.length - 1) {
   await carregarScripts(arquivoDeScripts, posicaoArqScript + 1)
  }
