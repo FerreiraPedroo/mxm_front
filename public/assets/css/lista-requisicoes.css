@@ -13,8 +13,13 @@
 }
 .item-box {
  display: flex;
+ align-items: center;
  background-color: #fff;
  gap: 12px;
+}
+.item-box:hover {
+ background-color: #eee;
+ cursor: pointer;
 }
 .item {
  padding: 8px;
@@ -22,6 +27,7 @@
 .item-requisicao {
  min-width: 128px;
  width: 128px;
+ text-align: center;
  max-width: 128px;
 }
 .item-centro-custo {
