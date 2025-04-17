@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerenciador de Arquivos</title>
   <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./assets/css/lista-requisicoes.css">
+  <link rel="stylesheet" href="./assets/css/requisicao.css">
 </head>
 
 <body>
@@ -20,7 +20,27 @@
   </nav>
  </header>
 
+
   <main id="main-conteiner">
+   <div id="conteudo">
+
+    <div id="titulo-box">
+     <div id="titulo-text">REQUISIÇÃO: <span id="requisicao-numero"></span></div>
+    </div>
+
+    <hr/>
+
+    <section id="data-sessao">
+     <div class="data-box">
+      <div class="data-titulo">Data de abertura</div>
+      <input type="date" id="data-abertura-input" class="data-input"/>
+     </div>
+    </section>
+
+    <hr/>
+
+   </div>
+
 
    <div id="tabela">
     <div id="cabecalho">
@@ -28,8 +48,7 @@
      <div class="cabecalho-item item-centro-custo">CENTRO DE CUSTO</div>
      <div class="cabecalho-item item-justificativa">JUSTIFICATIVA</div>
     </div>
-    <div id="items">
-    </div>
+    <div id="items"></div>
    </div>
 
   </main>
