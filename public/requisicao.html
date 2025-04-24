@@ -22,36 +22,50 @@
 
 
   <main id="main-conteiner">
-   <div id="conteudo">
-
+   <div id="head">
     <div id="titulo-box">
      <div id="titulo-text">REQUISIÇÃO: <span id="requisicao-numero"></span></div>
     </div>
-
-    <hr/>
-
-    <section id="data-sessao">
-     <div class="data-box">
-      <div class="data-titulo">Data de abertura</div>
-      <input type="date" id="data-abertura-input" class="data-input"/>
-     </div>
-    </section>
-
-    <hr/>
-
    </div>
+   
+   <hr/>
 
-
-   <div id="tabela">
-    <div id="cabecalho">
-     <div class="cabecalho-item item-requisicao">REQUISIÇÃO</div>
-     <div class="cabecalho-item item-centro-custo">CENTRO DE CUSTO</div>
-     <div class="cabecalho-item item-justificativa">JUSTIFICATIVA</div>
+   <section id="data-sessao">
+    <p class="data-head">DATAS</p> 
+    <div class="data-block">
+     <div class="data-box">
+      <div class="data-titulo">Abertura</div>
+      <input type="date" id="data-abertura-input" class="data-input" name="dt_solicitacao_req" />
+     </div>
+     <div class="data-box">
+      <div class="data-titulo">Envio da requisição</div>
+      <input type="date" id="data-abertura-input" class="data-input" name="dt_envio_req" />
+     </div>
+     <div class="data-box">
+      <div class="data-titulo">Retorno da cotação</div>
+      <input type="date" id="data-abertura-input" class="data-input" name="dt_retorno_cotacao" />
+     </div>
+     <div class="data-box">
+      <div class="data-titulo">Aprovação gerência</div>
+      <input type="date" id="data-abertura-input" class="data-input" name="dt_aprovacao_gerencia" />
+     </div>
+     <div class="data-box">
+      <div class="data-titulo">Entrega</div>
+      <input type="date" id="data-abertura-input" class="data-input" name="dt_entrega" />
+     </div>
     </div>
+   </section>
+   
+   <hr/>
+
+   <div id="items-container">
+    <p class="item-head">DATAS</p> 
     <div id="items"></div>
    </div>
+   
+   <hr/>
 
-  </main>
+</main>
 
   <script type="module" src="index.js"></script>
 </body>

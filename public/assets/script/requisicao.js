@@ -1,35 +1,34 @@
-async function carregarRequisicao(params) {
- const reqLista = await API.fetchDados(`/requisicao${params}`, "GET");
- const items = document.getElementById("items");
- const requisicaoNumero = document.getElementById("requisicao-numero");
+async function carregarRequisicao() {
+ const query = new URLSearchParams(location.search);
+ const requisicaoInfo = await API.fetchDados(`/requisicao?requisicaoID=${query.get("requisicaoID")}`, "GET");
+ console.log(requisicaoInfo);
+ if(requisicaoInfo.dados) {
+  const requisicaoNumeroEl = document.getElementById("requisicao-numero");
+  requisicaoNumeroEl.innerHTML = requisicaoInfo.dados.req;
 
- if(reqLista.dados) {
-
-  requisicaoNumero.innerHTML = reqLista.dados.req;
-
-
-
-
-
-  items.innerHTML = "";
-   reqLista.dados.itens.forEach((requisicao) => {
-    items.innerHTML += ""
-/*
-`
-     <div class="item-box" onclick="location.assign('/requisicao.html?reqID=${requisicao.id}');" data-id="${requisicao.req}">
-      <div class="item item-requisicao">${requisicao.req}</div>
-      <div class="item item-centro-custo">${requisicao.centro_custo.codigo + " - " +requisicao.centro_custo.nome + " - " + requisicao.centro_custo.unidade}</div>
-      <div class="item item-justificativa">${requisicao.observacao}</div>
-      <div class="item item-justificativa">${requisicao.justificativa}</div>
+  const itemsEl = document.getElementById("items");
+  itemsEl.innerHTML = "";
+   requisicaoInfo.dados.itens.forEach((item) => {
+    items.innerHTML += `
+     <div class="item-box">
+      <img class="item-imagem" src="default.png"/>
+      <div class="item-info">
+       <div class="item-nome">Lampada Fluorescente 20w</div>
+      </div>
+      <div class="item-quantidade">Quantidade total: ${item.quantidade}</div>
+      <div class="item-entregue">Entregue: 999</div>
+      <div class="item-pendente">Pendente: 999</div>
      </div>
     `;
 
-*/
+
    })
  } else {
-  items.innerHTML += "Não há requisição";
+  itemsEl.innerHTML += "Não há itens";
  }
+
+
 }
-console.log(location.search)
-carregarRequisicao(location.search);
+
+carregarRequisicao();
 
