@@ -2,18 +2,19 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerenciador de Arquivos</title>
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="./assets/css/requisicao.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Gerenciador de Arquivos</title>
+ <link rel="stylesheet" href="./assets/css/main.css">
+ <link rel="stylesheet" href="./assets/css/requisicao.css">
 </head>
 
 <body>
 
  <header id="head">
-  <nav class="menu-items" >
-   <div class="menu-item" onclick="location.replace('/lista-requisicoes.html')"><img src="./assets/imagens/menuPrincipal/requisicao-lista.png" alt="">Requisições</div>
+  <nav class="menu-items">
+   <div class="menu-item" onclick="location.replace('/lista-requisicoes.html')"><img
+     src="./assets/imagens/menuPrincipal/requisicao-lista.png" alt="">Requisições</div>
    <div class="menu-item" onclick="()=> null"><img src="" alt="">Pedidos</div>
    <div class="menu-item" onclick="()=> null"><img src="" alt="">Unidades</div>
    <div class="menu-item" onclick="()=> null"><img src="" alt="">Contas Contabéis</div>
@@ -21,52 +22,57 @@
  </header>
 
 
-  <main id="main-conteiner">
-   <div id="head">
-    <div id="titulo-box">
-     <div id="titulo-text">REQUISIÇÃO: <span id="requisicao-numero"></span></div>
+ <main id="main-conteiner">
+  <div id="head">
+   <div id="titulo-box">
+    <div id="titulo-text">REQUISIÇÃO: <span id="requisicao-numero"></span></div>
+   </div>
+  </div>
+
+  <hr />
+
+  <section id="data-sessao">
+   <div class="data-head-box">
+    <p class="data-head-text">DATAS</p>
+    <input type="button" id="data-salvar-botao" class="data-salvar-botao-desabilitado" value="SALVAR DATAS"/>
+   </div>
+
+   <div class="data-block">
+    <div class="data-box">
+     <div class="data-titulo">Abertura</div>
+     <input type="date" id="data-abertura-input" class="data-input" name="dt_solicitacao_req" />
+    </div>
+    <div class="data-box">
+     <div class="data-titulo">Envio da requisição</div>
+     <input type="date" id="data-envio-input" class="data-input" name="dt_envio_req" />
+    </div>
+    <div class="data-box">
+     <div class="data-titulo">Retorno da cotação</div>
+     <input type="date" id="data-retorno-input" class="data-input" name="dt_retorno_cotacao" />
+    </div>
+    <div class="data-box">
+     <div class="data-titulo">Aprovação gerência</div>
+     <input type="date" id="data-aprovacao-input" class="data-input" name="dt_aprovacao_gerencia" />
+    </div>
+    <div class="data-box">
+     <div class="data-titulo">Entrega</div>
+     <input type="date" id="data-entrega-input" class="data-input" name="dt_entrega" />
     </div>
    </div>
-   
-   <hr/>
+  </section>
 
-   <section id="data-sessao">
-    <p class="data-head">DATAS</p> 
-    <div class="data-block">
-     <div class="data-box">
-      <div class="data-titulo">Abertura</div>
-      <input type="date" id="data-abertura-input" class="data-input" name="dt_solicitacao_req" />
-     </div>
-     <div class="data-box">
-      <div class="data-titulo">Envio da requisição</div>
-      <input type="date" id="data-envio-input" class="data-input" name="dt_envio_req" />
-     </div>
-     <div class="data-box">
-      <div class="data-titulo">Retorno da cotação</div>
-      <input type="date" id="data-retorno-input" class="data-input" name="dt_retorno_cotacao" />
-     </div>
-     <div class="data-box">
-      <div class="data-titulo">Aprovação gerência</div>
-      <input type="date" id="data-aprovacao-input" class="data-input" name="dt_aprovacao_gerencia" />
-     </div>
-     <div class="data-box">
-      <div class="data-titulo">Entrega</div>
-      <input type="date" id="data-entrega-input" class="data-input" name="dt_entrega" />
-     </div>
-    </div>
-   </section>
-   
-   <hr/>
+  <hr />
 
-   <div id="items-container">
-    <p class="item-head">DATAS</p> 
-    <div id="items"></div>
-   </div>
-   
-   <hr/>
+  <div id="items-container">
+   <p class="item-head">MATERIAIS</p>
+   <div id="items"></div>
+  </div>
 
-</main>
+  <hr />
 
-  <script type="module" src="index.js"></script>
+ </main>
+
+ <script type="module" src="index.js"></script>
 </body>
+
 </html>
