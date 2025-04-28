@@ -16,7 +16,32 @@ async function carregarRequisicao() {
    }
   }
 
-  // ITEMS DA REQUISIÇÃO ////////////////////////////////////////////
+
+
+  // NOTAS FISCAIS LISTA //////////////////////////////////////////
+  if(requisicaoInfo.dados.notas_fiscais) {
+   const notasFiscaisEl = document.getElementById("notafiscal");
+   notasFiscaisEl.innerHTML = "";
+
+   requisicaoInfo.dados.notas_fiscais.foreach((nf) => {
+ 
+    notasFiscaisEl.innerHTML += `
+     <div class="notafiscal-box">
+      <p class="notafiscal-razaosocial">${nf.fornecedor.razao_social}</p>
+      <div class="notafiscal-info">
+       <p class="notafiscal-numero">Nº: ${nf.nf_numero}</p>
+       <p class="notafiscal-valor">valor: R$${nf.valor}</p>
+       <p class="notafiscal-datarecebimento">data recebimento: ${dt_recebimento}</p>
+      </div>
+     </div>
+     `;
+
+    })
+  }
+
+
+
+  // ITENS DA REQUISIÇÃO ////////////////////////////////////////////
   const itemsEl = document.getElementById("items");
 
   if (requisicaoInfo.dados.itens.length) {
