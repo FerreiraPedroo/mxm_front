@@ -31,14 +31,17 @@ main {}
  padding: 16px;
  gap: 12px;
 }
+
 .notafiscal-head-box {
  display: flex;
 }
+
 .notafiscal-head-text {
  width: 100%;
  font-size: 1.2rem;
  font-weight: bold;
 }
+
 #notafiscal-salvar-botao {
  width: 160px;
  background-color: gainsboro;
@@ -49,31 +52,51 @@ main {}
  border-width: 2px;
  cursor: pointer;
 }
+
 .notafiscal-salvar-botao-desabilitado {
  display: none;
 }
 
-#notasfiscais {
+#notafiscal {
  display: flex;
- gap: 32px;
-}
-.notafiscal-box {
- display: flex;
-}
-.notafiscal-razaosocial {
- font-size: 1.2rem;
-}
-.notafiscal-info {
- display: flex;
- gap: 32px;
-}
-.notafiscal-numero {
-}
-.notafiscal-valor {
-}
-.notafiscal-datarecebimento {
+ gap: 16px;
 }
 
+.notafiscal-box {
+ background-color: #fff;
+ border-radius: 8px;
+ border: 1px solid #aaa;
+ padding: 8px 12px 8px 8px;
+ user-select: none;
+}
+
+.notafiscal-razaosocial {
+ font-size: 1.1rem;
+}
+
+.notafiscal-info {
+ display: flex;
+ gap: 16px;
+}
+
+.notafiscal-numero {}
+
+.notafiscal-valor {}
+
+.notafiscal-datarecebimento {}
+
+#notafiscal-adicionar-botao {
+
+ width: 160px;
+ background-color: gainsboro;
+
+ font-size: 0.8rem;
+ border-radius: 4px;
+ letter-spacing: 1px;
+ word-spacing: 2px;
+ border-width: 2px;
+ cursor: pointer;
+}
 
 
 
@@ -214,12 +237,11 @@ main {}
 .item-pendente {
  width: 224px;
 }
+
 .item-vazio {
  width: 100%;
  text-align: center;
  padding: 4px;
- font-size: 1rem;;
+ font-size: 1rem;
+ ;
 }
-
-
-

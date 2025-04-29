@@ -26,9 +26,9 @@
 }
 .item-requisicao {
  min-width: 128px;
+ max-width: 128px;
  width: 128px;
  text-align: center;
- max-width: 128px;
 }
 .item-centro-custo {
  min-width: 352px;

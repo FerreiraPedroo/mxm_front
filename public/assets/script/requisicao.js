@@ -8,6 +8,9 @@ async function carregarRequisicao() {
   const requisicaoNumeroEl = document.getElementById("requisicao-numero");
   requisicaoNumeroEl.innerHTML = requisicaoInfo.dados.req;
 
+
+
+
   // DATAS DA REQUISIÇÃO ////////////////////////////////////////////
   const requisicaoDatas = document.getElementsByClassName("data-input");
   for (reqDados of requisicaoDatas) {
@@ -18,20 +21,21 @@ async function carregarRequisicao() {
 
 
 
+
   // NOTAS FISCAIS LISTA //////////////////////////////////////////
   if(requisicaoInfo.dados.notas_fiscais) {
    const notasFiscaisEl = document.getElementById("notafiscal");
    notasFiscaisEl.innerHTML = "";
 
-   requisicaoInfo.dados.notas_fiscais.foreach((nf) => {
+   requisicaoInfo.dados.notas_fiscais.forEach((nf) => {
  
     notasFiscaisEl.innerHTML += `
      <div class="notafiscal-box">
-      <p class="notafiscal-razaosocial">${nf.fornecedor.razao_social}</p>
+      <p class="notafiscal-razaosocial">${nf.fornecedor.razao_social ?? "-"}</p>
       <div class="notafiscal-info">
-       <p class="notafiscal-numero">Nº: ${nf.nf_numero}</p>
-       <p class="notafiscal-valor">valor: R$${nf.valor}</p>
-       <p class="notafiscal-datarecebimento">data recebimento: ${dt_recebimento}</p>
+       <p class="notafiscal-numero">Nº: ${nf.nf_numero ?? "-"}</p>
+       <p class="notafiscal-valor">Valor: R$${nf.valor ?? "-"}</p>
+       <p class="notafiscal-datarecebimento">Recebimento: ${nf.dt_recebimento ?? "-"}</p>
       </div>
      </div>
      `;
@@ -41,9 +45,9 @@ async function carregarRequisicao() {
 
 
 
+
   // ITENS DA REQUISIÇÃO ////////////////////////////////////////////
   const itemsEl = document.getElementById("items");
-
   if (requisicaoInfo.dados.itens.length) {
    itemsEl.innerHTML = "";
 
@@ -78,12 +82,6 @@ async function carregarRequisicao() {
       </div>
      `;
    })
-  } else {
-   itemsEl.innerHTML += `
-     <div class="item-box">
-      <div class="item-vazio">Não há materiais.</div>
-     </div>
-   `;
   }
 
  }
@@ -134,6 +132,22 @@ async function adicionarEventListener(requisicaoInfo, requisicaoDatas) {
   data.addEventListener("change", (event) => eventoHandle(event, requisicaoInfo, requisicaoDatas))
  }
 
+}
+
+// FUNÇÃO DO MODAL
+function modalAdicionarNotaFiscal(){
+  const modalEl = document.getElementById("notafiscal-adicionar-botao");
+
+
+
+
+
+
+
+
+
+
+  
 }
 
 

@@ -21,6 +21,11 @@
   </nav>
  </header>
 
+ <div id="modal-adicionar-notafiscal">
+  <div id="modal-notafiscal-box">
+  </div>
+ </div>
+
 
  <main id="main-conteiner">
   <div id="head">
@@ -34,7 +39,7 @@
   <section id="data-sessao">
    <div class="data-head-box">
     <p class="data-head-text">DATAS</p>
-    <input type="button" id="data-salvar-botao" class="data-salvar-botao-desabilitado" value="SALVAR DATAS"/>
+    <input type="button" id="data-salvar-botao" class="data-salvar-botao-desabilitado" value="SALVAR DATAS" />
    </div>
 
    <div class="data-block">
@@ -66,6 +71,7 @@
   <section id="notafiscal-sessao">
    <div class="notafiscal-head-box">
     <p class="notafiscal-head-text">NOTAS FISCAIS</p>
+    <input type="button" id="notafiscal-adicionar-botao" value="ADICIONAR NF" onclick="modalAdicionarNotaFiscal()" />
    </div>
    <div id="notafiscal"></div>
   </section>
