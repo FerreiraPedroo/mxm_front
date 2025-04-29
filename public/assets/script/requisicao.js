@@ -1,17 +1,17 @@
-// CARREGAR OS DADOS DA REQUISIÇÃO E ENVIA PARA HTML
+// CARREGAR OS DADOS DA REQUISIÇÃO E ENVIA PARA HTML ///////////////////////////////////////////
 async function carregarRequisicao() {
  const query = new URLSearchParams(location.search);
  const requisicaoInfo = await API.fetchDados(`/requisicao?requisicaoID=${query.get("requisicaoID")}`, "GET");
 
  if (requisicaoInfo.dados) {
-  // NUMERO DA REQUISIÇÃO ////////////////////////////////////////////
+  // NUMERO DA REQUISIÇÃO
   const requisicaoNumeroEl = document.getElementById("requisicao-numero");
   requisicaoNumeroEl.innerHTML = requisicaoInfo.dados.req;
 
 
 
 
-  // DATAS DA REQUISIÇÃO ////////////////////////////////////////////
+  // DATAS DA REQUISIÇÃO
   const requisicaoDatas = document.getElementsByClassName("data-input");
   for (reqDados of requisicaoDatas) {
    if (requisicaoInfo.dados[reqDados.name]) {
@@ -22,7 +22,7 @@ async function carregarRequisicao() {
 
 
 
-  // NOTAS FISCAIS LISTA //////////////////////////////////////////
+  // NOTAS FISCAIS LISTA //////////////////////////////////////////////////////////////////
   if(requisicaoInfo.dados.notas_fiscais) {
    const notasFiscaisEl = document.getElementById("notafiscal");
    notasFiscaisEl.innerHTML = "";
@@ -46,7 +46,7 @@ async function carregarRequisicao() {
 
 
 
-  // ITENS DA REQUISIÇÃO ////////////////////////////////////////////
+  // ITENS DA REQUISIÇÃO
   const itemsEl = document.getElementById("items");
   if (requisicaoInfo.dados.itens.length) {
    itemsEl.innerHTML = "";
@@ -89,7 +89,10 @@ async function carregarRequisicao() {
  return requisicaoInfo;
 }
 
-// VERIFICA SE AS DATAS FORAM ALTERADAS E HABILITA O BOTÃO DE SALVAR 
+
+
+
+// VERIFICA SE AS DATAS FORAM ALTERADAS E HABILITA O BOTÃO DE SALVAR  ///////////////////////////////
 async function adicionarEventListener(requisicaoInfo, requisicaoDatas) {
 
  function eventoHandle(event, requisicaoInfo, requisicaoDatas) {
@@ -118,6 +121,7 @@ async function adicionarEventListener(requisicaoInfo, requisicaoDatas) {
    }
   }
 
+
   // SE ALGUMA DATA FOI MODIFICADA EXIBE O BOTÃO DE SALVAR.
   const dataSaveButton = document.getElementById("data-salvar-botao");
   if (dataModificada) {
@@ -132,23 +136,15 @@ async function adicionarEventListener(requisicaoInfo, requisicaoDatas) {
   data.addEventListener("change", (event) => eventoHandle(event, requisicaoInfo, requisicaoDatas))
  }
 
+ // ADICIONAR NOTA FISCAL ////////////////////////////////////////////////////
+ const notafiscalAdicionar = document.getElementById("notafiscal-adicionar-botao");
+ notafiscalAdicionar.addEventListener("click", ()=>window.location.assign(`requisicao-adicionar-nota-fiscal.html?requisicaoID=${requisicaoInfo.dados.id}`))
+ 
+
 }
 
-// FUNÇÃO DO MODAL
-function modalAdicionarNotaFiscal(){
-  const modalEl = document.getElementById("notafiscal-adicionar-botao");
 
 
-
-
-
-
-
-
-
-
-  
-}
 
 
 async function principal() {

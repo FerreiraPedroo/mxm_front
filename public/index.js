@@ -8,7 +8,8 @@ const arquivosDeScriptInicial = [
 
 const arquivoPorLocalizacao = {
  "/lista-requisicoes.html": "./assets/script/lista-requisicoes.js",
- "/requisicao.html": "./assets/script/requisicao.js"
+ "/requisicao.html": "./assets/script/requisicao.js",
+ "/requisicao-adicionar-nota-fiscal.html": "./assets/script/requisicao-adicionar-nota-fiscal.js"
 }
 
 const arquivosDeScriptPaginas = [];

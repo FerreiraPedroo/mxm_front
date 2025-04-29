@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Gerenciador de Arquivos</title>
+ <link rel="stylesheet" href="./assets/css/main.css">
+ <link rel="stylesheet" href="./assets/css/requisicao-adicionar-notafiscal.css">
+</head>
+
+<body>
+
+ <header id="head">
+  <nav class="menu-items">
+   <div class="menu-item" onclick="location.replace('/lista-requisicoes.html')"><img
+     src="./assets/imagens/menuPrincipal/requisicao-lista.png" alt="">Requisições</div>
+   <div class="menu-item" onclick="()=> null"><img src="" alt="">Pedidos</div>
+   <div class="menu-item" onclick="()=> null"><img src="" alt="">Unidades</div>
+   <div class="menu-item" onclick="()=> null"><img src="" alt="">Contas Contabéis</div>
+  </nav>
+ </header>
+
+ <main id="main-conteiner">
+  <div id="head">
+   <div id="titulo-box">
+    <div id="titulo-text">ADICIONAR NOTAFISCAL: REQUISIÇÃO <span id="requisicao-numero"></span></div>
+   </div>
+  </div>
+
+  <hr />
+
+  <section id="fornecedores-sessao">
+   <div class="fornecedores-head-box">
+    <p class="fornecedores-head-title">FORNECEDOR</p>
+    <input type="button" id="fornecedor-alterar-botao" class="" value="ALTERAR FORNECEDOR" />
+   </div>
+   <div class="fornecedor-selecionado-box">
+    <img src="" class="fornecedor-selecionado-imagem" />
+    <p class="fornecedor-selecionado-nome">PEDRO HNERIQUE</p>
+   </div>
+  </section>
+
+  <hr />
+
+  <section id="items-container">
+   <p class="item-head">MATERIAIS</p>
+   <div id="items"></div>
+  </section>
+
+  <hr />
+
+ </main>
+
+ <script type="module" src="index.js"></script>
+</body>
+
+</html>
