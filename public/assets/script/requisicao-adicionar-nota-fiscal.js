@@ -32,18 +32,29 @@ async function carregarRequisicao() {
     }
 
     // ITENS - HTML
-    itemsEl.innerHTML += `
-      <div class="item-box">
-       <img class="item-imagem" src="default.png"/>
-       <div class="item-info">
-        <div class="item-nome">${item.item_info.nome}</div>
-       </div>
-       <div class="item-quantidade">Total: ${item.quantidade}</div>
-       <div class="item-pendente">Pendente: ${item.quantidade - notasFiscaisQuantidade}</div>
-       <div class="item-entregue">Entregue: ${notasFiscaisQuantidade}</div>
+    if (notasFiscaisQuantidade < item.quantidade) {
+     itemsEl.innerHTML += `
+     <div class="item-box">
+      <img class="item-imagem" src="default.png"/>
+      <div class="item-info">
+      <div class="item-nome">${item.item_info.nome}</div>
+     </div>
+     <div class="item-quantidade">Total: ${item.quantidade}</div>
+     <div class="item-pendente">Pendente: ${item.quantidade - notasFiscaisQuantidade}</div>
+     <div class="item-inuts-box">
+      <hr class="item-linha-vertical">
+      <div>
+       <p>Quantidade</p>
+       <input type="number" class="item-input-quantidade" value="0" min="0" max="${item.quantidade - notasFiscaisQuantidade}"/>
       </div>
+     </div>
+     
      `;
+    }
+
    })
+
+
   }
 
  }
@@ -51,12 +62,16 @@ async function carregarRequisicao() {
 }
 
 
+async function carregarEventsListeners (){
+ 
+}
+
 
 
 
 async function principal() {
  const requisicaoInfo = await carregarRequisicao();
-
+ await carregarEventsListeners();
 
 
 }

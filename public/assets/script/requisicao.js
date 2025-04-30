@@ -23,12 +23,12 @@ async function carregarRequisicao() {
 
 
   // NOTAS FISCAIS LISTA //////////////////////////////////////////////////////////////////
-  if(requisicaoInfo.dados.notas_fiscais) {
+  if (requisicaoInfo.dados.notas_fiscais) {
    const notasFiscaisEl = document.getElementById("notafiscal");
    notasFiscaisEl.innerHTML = "";
 
    requisicaoInfo.dados.notas_fiscais.forEach((nf) => {
- 
+
     notasFiscaisEl.innerHTML += `
      <div class="notafiscal-box">
       <p class="notafiscal-razaosocial">${nf.fornecedor.razao_social ?? "-"}</p>
@@ -40,7 +40,7 @@ async function carregarRequisicao() {
      </div>
      `;
 
-    })
+   })
   }
 
 
@@ -138,8 +138,8 @@ async function adicionarEventListener(requisicaoInfo, requisicaoDatas) {
 
  // ADICIONAR NOTA FISCAL ////////////////////////////////////////////////////
  const notafiscalAdicionar = document.getElementById("notafiscal-adicionar-botao");
- notafiscalAdicionar.addEventListener("click", ()=>window.location.assign(`requisicao-adicionar-nota-fiscal.html?requisicaoID=${requisicaoInfo.dados.id}`))
- 
+ notafiscalAdicionar.addEventListener("click", () => window.location.assign(`requisicao-adicionar-nota-fiscal.html?requisicaoID=${requisicaoInfo.dados.id}`))
+
 
 }
 

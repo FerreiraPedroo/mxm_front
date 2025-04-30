@@ -30,9 +30,11 @@ main {}
  padding: 16px;
  gap: 12px;
 }
+
 .fornecedores-head-box {
  display: flex;
 }
+
 .fornecedores-head-title {
  width: 100%;
  font-size: 1.2rem;
@@ -71,6 +73,7 @@ main {}
  width: 64px;
  height: 64px;
 }
+
 .fornecedor-selecionado-nome {
  width: 100%;
  font-size: 1.2rem;
@@ -84,8 +87,8 @@ main {}
 
 
 
-
 /* 
+
 * {
  border: 1px solid blue;
 } */
@@ -148,6 +151,28 @@ main {}
 
 .item-pendente {
  width: 224px;
+}
+
+.item-inuts-box {
+ display: flex;
+ gap: 24px;
+}
+.item-input-checkbox {
+ width: 22px;
+ height: 22px;
+}
+
+.item-input-quantidade {
+ width: 48px;
+ height: 28px;
+ font-size: 1rem;
+ padding: 8px 0 8px 8px;
+
+}
+
+.item-linha-vertical {
+ height: 52px;
+ border-left: 1px solid silver;
 }
 
 .item-vazio {
