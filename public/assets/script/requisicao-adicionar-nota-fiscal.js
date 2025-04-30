@@ -61,12 +61,31 @@ async function carregarRequisicao() {
  return requisicaoInfo;
 }
 
+async function carregarListaFornecedores() {
+ const requisicaoInfo = await API.fetchDados(`/requisicao`, "GET");
+ console.log(requisicaoInfo);
+ const fornecedoresEl = document.getElementById("modal-lista");
 
-async function carregarEventsListeners (){
- 
+ fornecedoresEl.innerHTML = "";
+
+ if(requisicaoInfo.dados) {
+  requisicaoInfo.dados.forEach((fornecedor) => {
+   fornecedoresEl.innerHTML += `
+    <div class="fornecedor-selecionado-box">
+     <img src="${fornecedor.imagem ? fornecedor.imagem : 'default.png'}" class="fornecedor-selecionado-imagem" />
+     <p class="fornecedor-selecionado-nome">${fornecedor.razao_social}</p>
+    </div>
+   `;
+  });
+ }
 }
 
 
+
+async function carregarEventsListeners (){
+ const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
+ botaoAlterarFornecedorEl.addEventListener("click", carregarListaFornecedores);
+}
 
 
 async function principal() {
