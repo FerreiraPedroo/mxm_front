@@ -62,13 +62,13 @@ async function carregarRequisicao() {
 }
 
 async function carregarListaFornecedores() {
- const requisicaoInfo = await API.fetchDados(`/requisicao`, "GET");
+ const requisicaoInfo = await API.fetchDados(`/fornecedores`, "GET");
  console.log(requisicaoInfo);
  const fornecedoresEl = document.getElementById("modal-lista");
 
  fornecedoresEl.innerHTML = "";
 
- if(requisicaoInfo.dados) {
+ if (requisicaoInfo.dados) {
   requisicaoInfo.dados.forEach((fornecedor) => {
    fornecedoresEl.innerHTML += `
     <div class="fornecedor-selecionado-box">
@@ -82,7 +82,7 @@ async function carregarListaFornecedores() {
 
 
 
-async function carregarEventsListeners (){
+async function carregarEventsListeners() {
  const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
  botaoAlterarFornecedorEl.addEventListener("click", carregarListaFornecedores);
 }
