@@ -1,46 +1,47 @@
 main {}
 
+/*///////////////////////////////////////////////////////////////////
+// TITULO DA PÁGINA //////////////////////////////////////////////*/
+#head {
+
+}
 #titulo {
  display: flex;
  flex-direction: column;
- gap: 16px;
+  gap: 12px;
 }
-
 #titulo-box {
  font-size: 1.8rem;
  background-color: #eee;
- padding: 16px;
+ padding: 12px;
+ border-radius: 8px 8px 0 0;
 }
-
-#titulo-box span {
+#titulo-text {
+ font-size: 1.6rem;
+}
+#titulo-text span {
  font-size: 1.8rem;
  font-weight: bold;
  padding: 12px;
 }
 
-
-
-
-
-
+/*///////////////////////////////////////////////////////////////////
+// INFORMAÇÕES DO FORNECEDOR SELECIONADO //////////////////////////*/
 #fornecedores-sessao {
  display: flex;
  flex-direction: column;
  background-color: #eee;
- padding: 16px;
+ padding: 12px;
  gap: 12px;
 }
-
 .fornecedores-head-box {
  display: flex;
 }
-
 .fornecedores-head-title {
  width: 100%;
  font-size: 1.2rem;
  font-weight: bold;
 }
-
 #fornecedor-alterar-botao {
  width: 256px;
  background-color: gainsboro;
@@ -52,12 +53,9 @@ main {}
  border-width: 2px;
  cursor: pointer;
 }
-
 #fornecedor-selecionado {
  display: flex;
 }
-
-
 .fornecedor-selecionado-box {
  display: flex;
  align-items: center;
@@ -68,12 +66,10 @@ main {}
  gap: 12px;
  user-select: none;
 }
-
 .fornecedor-selecionado-imagem {
  width: 64px;
  height: 64px;
 }
-
 .fornecedor-selecionado-nome {
  width: 100%;
  font-size: 1.2rem;
@@ -81,8 +77,30 @@ main {}
 
 
 
+/*///////////////////////////////////////////////////////////////////
+// MODAL ALTERAR FORNECEDOR ///////////////////////////////////////*/
 
+#modal {
+ position: absolute;
+ top: 0px;
+ left: 0px;
 
+ width: 100%;
+ height: 100%;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ background-color: rgba(0,0,0, 0.5);
+}
+.modal-conteudo {
+ position: relative;
+ width: 512px;
+ height: 448px;
+ background-color: #FFF;
+ border: 1px solid red;
+}
 
 
 
@@ -94,13 +112,13 @@ main {}
 } */
 
 
-
-
+/*///////////////////////////////////////////////////////////////////
+// LISTA DE ITENS PENDENTES ///////////////////////////////////////*/
 #items-container {
  display: flex;
  flex-direction: column;
  background-color: #eee;
- padding: 16px;
+ padding: 12px;
  gap: 12px;
 }
 

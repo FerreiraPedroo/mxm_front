@@ -91,7 +91,7 @@ async function carregarEventsListeners() {
 async function principal() {
  const requisicaoInfo = await carregarRequisicao();
  await carregarEventsListeners();
-
-
 }
+
+
 principal();
