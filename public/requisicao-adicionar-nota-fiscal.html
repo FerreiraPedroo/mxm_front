@@ -21,10 +21,24 @@
   </nav>
  </header>
 
- <div id="modal">
+ <div id="modal" class="modal-esconder">
   <div class="modal-conteudo">
-   <p class="modal-titulo">MUDAR FORNECEDOR</p>
-   <div id="modal-lista"></div>
+   <div class="modal-cabecalho">
+    <p class="modal-cabecalho-titulo">ALTERAR FORNECEDOR</p>
+    <button class="modal-cabecalho-botao-fechar" onclick="fecharModal()">X</button>
+   </div>
+
+   <div class="modal-corpo">
+    <div class="select_selecionador_box">
+     <input class="select_procurar" type="text" onChange="(e)=> setTextoSelecionar(e.target.value.toUpperCase())" value=""/>
+     <div id="select-lista"></div>
+    </div>
+   </div>
+
+   <div class="modal-rodape">
+    <button class="modal-cabecalho-botao-confirmar" onclick="selecionarFornecedor(); fecharModal();">ALTERAR</button>
+   </div>
+
   </div>
  </div>
 

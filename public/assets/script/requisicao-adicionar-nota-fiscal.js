@@ -1,4 +1,10 @@
-// CARREGAR OS DADOS DA REQUISIÇÃO E ENVIA PARA HTML ///////////////////////////////////////////
+// DADOS GLOBAIS
+let FORNECEDOR_SELECIONADO = null;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// CARREGAR OS DADOS DA REQUISIÇÃO E ENVIA PARA HTML //////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 async function carregarRequisicao() {
  const query = new URLSearchParams(location.search);
  const requisicaoInfo = await API.fetchDados(`/requisicao?requisicaoID=${query.get("requisicaoID")}`, "GET");
@@ -61,33 +67,123 @@ async function carregarRequisicao() {
  return requisicaoInfo;
 }
 
-async function carregarListaFornecedores() {
- const requisicaoInfo = await API.fetchDados(`/fornecedores`, "GET");
- console.log(requisicaoInfo);
- const fornecedoresEl = document.getElementById("modal-lista");
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// CARREGAR LISTA DE FORNECEDORES /////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+async function carregarModal() {
+ const modalEl = document.getElementById("modal");
+ modalEl.classList.remove("modal-esconder")
+ modalEl.classList.add("modal-exibir")
+
+
+ const fornecedoresEl = document.getElementById("select-lista");
+ fornecedoresEl.innerHTML = "<div class='carregando'>Carregando... </div>";
+
+ const requisicaoInfo = await API.fetchDados(`/fornecedores`, "GET");
  fornecedoresEl.innerHTML = "";
 
  if (requisicaoInfo.dados) {
   requisicaoInfo.dados.forEach((fornecedor) => {
    fornecedoresEl.innerHTML += `
-    <div class="fornecedor-selecionado-box">
-     <img src="${fornecedor.imagem ? fornecedor.imagem : 'default.png'}" class="fornecedor-selecionado-imagem" />
-     <p class="fornecedor-selecionado-nome">${fornecedor.razao_social}</p>
-    </div>
-   `;
+      <div class="fornecedor-box" click="selecionarFornecedor(e, ${fornecedor.cnpj})">
+       <img src="${fornecedor.imagem ? fornecedor.imagem : 'default.png'}" class="fornecedor-logo"/>
+       <div class="fornecedor-info">
+        <p class="fornecedor-cnpj">${fornecedor.cnpj}</p>
+        <p class="fornecedor-razaosocial">${fornecedor.razao_social}</p>
+       </div>
+      </div>
+    `;
   });
+ }
+
+}
+
+function fecharModal() {
+ const modalEl = document.getElementById("modal");
+ modalEl.classList.add("modal-esconder")
+ modalEl.classList.remove("modal-exibir")
+ FORNECEDOR_SELECIONADO = null;
+}
+
+
+
+
+
+
+
+
+
+
+function selecionarFornecedor(e, fornecedorCNPJ) {
+ FORNECEDOR_SELECIONADO = fornecedorCNPJ;
+ const fornecedoresEl = document.getElementsByClassName("fornecedor-box");
+ for (fornecedor of fornecedoresEl) {
+  if(){
+
+
+
+
+
+  }
+
+
+
  }
 }
 
 
 
-async function carregarEventsListeners() {
- const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
- botaoAlterarFornecedorEl.addEventListener("click", carregarListaFornecedores);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fornecedorSelecionado() {
+
+ const modalEl = document.getElementById("modal");
+ modalEl.classList.add("modal-esconder")
+ modalEl.classList.remove("modal-exibir")
 }
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// CARREGAR EVENT LSTENERS ////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+async function carregarEventsListeners() {
+
+ // BOTÃO PARA ABRIR O MODAL DE ALTERAR FORNECEDOR.
+ const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
+ botaoAlterarFornecedorEl.addEventListener("click", carregarModal);
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// INICIAR SCRIPT DA PÁGINA ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 async function principal() {
  const requisicaoInfo = await carregarRequisicao();
  await carregarEventsListeners();
