@@ -1,0 +1,15 @@
+.bloco-sessao {
+ display: flex;
+ flex-direction: column;
+ background-color: #eee;
+ padding: 12px;
+ gap: 12px;
+}
+.bloco-cabecalho {
+ display: flex;
+}
+.bloco-cabecalho-titulo {
+ width: 100%;
+ font-size: 1.2rem;
+ font-weight: bold;
+}

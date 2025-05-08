@@ -1,3 +1,6 @@
+@import url('componentes/input-botao.css');
+@import url('componentes/bloco-sessao.css');
+
 main {}
 
 /*///////////////////////////////////////////////////////////////////
@@ -25,34 +28,44 @@ main {}
  padding: 12px;
 }
 
-/*///////////////////////////////////////////////////////////////////
-// INFORMAÇÕES DO FORNECEDOR SELECIONADO //////////////////////////*/
-#fornecedores-sessao {
+
+
+
+#fornecedor-selecionado {
  display: flex;
- flex-direction: column;
- background-color: #eee;
- padding: 12px;
+}
+.fornecedor-selecionado-box {
+ display: flex;
+ align-items: center;
+ background-color: #fff;
+ border-radius: 8px;
+ border: 1px solid #aaa;
+ padding: 8px 12px 8px 8px;
  gap: 12px;
+ user-select: none;
 }
-.fornecedores-head-box {
- display: flex;
+.fornecedor-selecionado-imagem {
+ width: 64px;
+ height: 64px;
 }
-.fornecedores-head-title {
+.fornecedor-selecionado-nome {
  width: 100%;
  font-size: 1.2rem;
- font-weight: bold;
 }
-#fornecedor-alterar-botao {
- width: 256px;
- background-color: gainsboro;
 
- font-size: 0.8rem;
- border-radius: 4px;
- letter-spacing: 1px;
- word-spacing: 2px;
- border-width: 2px;
- cursor: pointer;
-}
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////////////////
+// INFORMAÇÕES DO FORNECEDOR SELECIONADO //////////////////////////*/
 #fornecedor-selecionado {
  display: flex;
 }
@@ -201,6 +214,10 @@ main {}
 }
 .fornecedor-info {
 }
+.fornecedor-selecionado {
+ border: 1px solid #000;
+ background-color: #f0f0f0;
+}
 .carregando {
  width: 100%;
  text-align: center;
@@ -226,18 +243,6 @@ main {}
 
 /*///////////////////////////////////////////////////////////////////
 // LISTA DE ITENS PENDENTES ///////////////////////////////////////*/
-#items-container {
- display: flex;
- flex-direction: column;
- background-color: #eee;
- padding: 12px;
- gap: 12px;
-}
-
-.item-head {
- font-size: 1.2rem;
- font-weight: bold;
-}
 
 #items {
  display: flex;

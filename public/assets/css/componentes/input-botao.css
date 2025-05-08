@@ -1,0 +1,15 @@
+.input-botao {
+ padding: 8px 16px;
+ border-radius: 8px;
+ border: 1px solid #555;
+ background-color: #aaa;
+ letter-spacing: 1px;
+ word-spacing: 2px;
+}
+.input-botao:hover {
+ cursor: pointer;
+ background-color: #bbb;
+}
+.input-botao:active {
+ border: 1px solid blue;
+}

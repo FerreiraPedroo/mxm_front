@@ -27,18 +27,15 @@
     <p class="modal-cabecalho-titulo">ALTERAR FORNECEDOR</p>
     <button class="modal-cabecalho-botao-fechar" onclick="fecharModal()">X</button>
    </div>
-
    <div class="modal-corpo">
     <div class="select_selecionador_box">
      <input class="select_procurar" type="text" onChange="(e)=> setTextoSelecionar(e.target.value.toUpperCase())" value=""/>
      <div id="select-lista"></div>
     </div>
    </div>
-
    <div class="modal-rodape">
-    <button class="modal-cabecalho-botao-confirmar" onclick="selecionarFornecedor(); fecharModal();">ALTERAR</button>
+    <button class="modal-cabecalho-botao-confirmar" onclick="fornecedorSelecionado(); fecharModal();">ALTERAR</button>
    </div>
-
   </div>
  </div>
 
@@ -51,18 +48,28 @@
 
   <hr />
 
-  <section id="fornecedores-sessao">
-   <div class="fornecedores-head-box">
-    <p class="fornecedores-head-title">FORNECEDOR</p>
-    <input type="button" id="fornecedor-alterar-botao" class="" value="ALTERAR FORNECEDOR" />
+  <section class="bloco-sessao">
+   <div class="bloco-cabecalho">
+    <p class="bloco-cabecalho-titulo">PEDIDO DE COMPRA</p>
+   </div>
+   <div id="" class=""></div>
+  </section>
+
+  <hr />
+
+  <section class="bloco-sessao">
+   <div class="bloco-cabecalho">
+    <p class="bloco-cabecalho-titulo">FORNECEDOR</p>
+    <input type="button" id="fornecedor-alterar-botao" class="input-botao" value="ALTERAR FORNECEDOR" />
    </div>
    <div id="fornecedor"></div>
   </section>
 
   <hr />
 
-  <section id="items-container">
-   <p class="item-head">MATERIAIS</p>
+  <section class="bloco-sessao">
+   <div class="bloco-cabecalho">
+    <p class="bloco-cabecalho-titulo">MATERIAIS</p>
    <div id="items"></div>
   </section>
 

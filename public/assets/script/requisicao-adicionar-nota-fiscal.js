@@ -70,9 +70,10 @@ async function carregarRequisicao() {
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-// CARREGAR LISTA DE FORNECEDORES /////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+/*############################################################################
+ CARREGAR LISTA DE FORNECEDORES.
+############################################################################*/
+
 async function carregarModal() {
  const modalEl = document.getElementById("modal");
  modalEl.classList.remove("modal-esconder")
@@ -88,9 +89,10 @@ async function carregarModal() {
  if (requisicaoInfo.dados) {
   requisicaoInfo.dados.forEach((fornecedor) => {
    fornecedoresEl.innerHTML += `
-      <div class="fornecedor-box" click="selecionarFornecedor(e, ${fornecedor.cnpj})">
+      <div id="${fornecedor.id +"_"+ fornecedor.razao_social}" class="fornecedor-box" onclick="selecionarFornecedor('${fornecedor.id +"_"+ fornecedor.razao_social}')">
        <img src="${fornecedor.imagem ? fornecedor.imagem : 'default.png'}" class="fornecedor-logo"/>
        <div class="fornecedor-info">
+        <input id="fornecedor_id" type="hidden" name="fornecedor_id" value="${fornecedor.id}">
         <p class="fornecedor-cnpj">${fornecedor.cnpj}</p>
         <p class="fornecedor-razaosocial">${fornecedor.razao_social}</p>
        </div>
@@ -101,6 +103,13 @@ async function carregarModal() {
 
 }
 
+
+
+
+/*############################################################################
+ FUNÇÃO PARA FECHAR O MODAL MUDAR FORNECEDOR.
+############################################################################*/
+
 function fecharModal() {
  const modalEl = document.getElementById("modal");
  modalEl.classList.add("modal-esconder")
@@ -108,71 +117,49 @@ function fecharModal() {
  FORNECEDOR_SELECIONADO = null;
 }
 
-
-
-
-
-
-
-
-
-
-function selecionarFornecedor(e, fornecedorCNPJ) {
- FORNECEDOR_SELECIONADO = fornecedorCNPJ;
- const fornecedoresEl = document.getElementsByClassName("fornecedor-box");
- for (fornecedor of fornecedoresEl) {
-  if(){
-
-
-
-
-
-  }
-
-
-
- }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function fornecedorSelecionado() {
-
  const modalEl = document.getElementById("modal");
  modalEl.classList.add("modal-esconder")
  modalEl.classList.remove("modal-exibir")
+
+ FORNECEDOR_SELECIONADO.classList.remove("fornecedor-selecionado");
+ FORNECEDOR_SELECIONADO.classList.remove("fornecedor-box");
+ FORNECEDOR_SELECIONADO.classList.add("item-box");
+ FORNECEDOR_SELECIONADO.removeAttribute("onclick")
+
+ const fornecedorEl = document.getElementById("fornecedor");
+ fornecedorEl.innerHTML = "";
+
+ fornecedorEl.appendChild(FORNECEDOR_SELECIONADO);
+}
+
+
+/*############################################################################
+ FUNÇÃO PARA SELECIONADO O FORNECEDOR NO MODAL MUDAR FORNECEDOR.
+############################################################################*/
+
+function selecionarFornecedor(fornecedor) {
+
+ const fornecedoresEl = document.getElementsByClassName("fornecedor-box");
+ for (fornecedorEl of fornecedoresEl) {
+  if(fornecedor == fornecedorEl.id){
+   FORNECEDOR_SELECIONADO = fornecedorEl;
+   fornecedorEl.classList.add("fornecedor-selecionado");
+  } else {
+   fornecedorEl.classList.remove("fornecedor-selecionado");
+  }
+ }
+
 }
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-// CARREGAR EVENT LSTENERS ////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
-async function carregarEventsListeners() {
 
+/*############################################################################
+ CARREGAR EVENT LSTENERS
+############################################################################*/
+
+async function carregarEventsListeners() {
  // BOTÃO PARA ABRIR O MODAL DE ALTERAR FORNECEDOR.
  const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
  botaoAlterarFornecedorEl.addEventListener("click", carregarModal);
@@ -181,9 +168,10 @@ async function carregarEventsListeners() {
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-// INICIAR SCRIPT DA PÁGINA ///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////
+/*############################################################################
+ INICIAR SCRIPT DA PÁGINA
+############################################################################*/
+
 async function principal() {
  const requisicaoInfo = await carregarRequisicao();
  await carregarEventsListeners();
