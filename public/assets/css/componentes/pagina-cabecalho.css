@@ -1,0 +1,16 @@
+.pagina-cabecalho {
+}
+.cabecalho-box {
+ font-size: 1.8rem;
+ background-color: #eee;
+ padding: 12px;
+ border-radius: 8px 8px 0 0;
+}
+.cabecalho-texto {
+ font-size: 1.6rem;
+}
+.cabecalho-texto span {
+ font-size: 1.8rem;
+ font-weight: bold;
+ padding: 12px;
+}

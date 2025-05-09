@@ -13,3 +13,8 @@
  font-size: 1.2rem;
  font-weight: bold;
 }
+.bloco-rodape {
+ display: flex;
+ justify-content: center;
+ padding: 32px;
+}

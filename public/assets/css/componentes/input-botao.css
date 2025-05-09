@@ -1,10 +1,11 @@
 .input-botao {
- padding: 8px 16px;
- border-radius: 8px;
+ padding: 12px 16px;
+ border-radius: 16px;
  border: 1px solid #555;
- background-color: #aaa;
+ background-color: #ccc;
  letter-spacing: 1px;
  word-spacing: 2px;
+ box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 .input-botao:hover {
  cursor: pointer;
@@ -13,3 +14,24 @@
 .input-botao:active {
  border: 1px solid blue;
 }
+
+
+.input-botao-verde {
+ background-color: #0f0;
+}
+.input-botao-verde:hover {
+ background-color: #0c0;
+}
+.input-botao-vermelho {
+ background-color: #f00;
+}
+.input-botao-vermelho:hover {
+ background-color: #c00;
+}
+.input-botao-azul {
+ background-color: #99f;
+}
+.input-botao-azul:hover {
+ background-color: #77f;
+}
+

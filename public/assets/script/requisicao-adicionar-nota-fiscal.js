@@ -51,7 +51,7 @@ async function carregarRequisicao() {
       <hr class="item-linha-vertical">
       <div>
        <p>Quantidade</p>
-       <input type="number" class="item-input-quantidade" value="0" min="0" max="${item.quantidade - notasFiscaisQuantidade}"/>
+       <input type="number" class="item-input-quantidade form-input-item" name="${item.item_info.id}" min="0" max="${item.quantidade - notasFiscaisQuantidade}"/>
       </div>
      </div>
      
@@ -71,14 +71,13 @@ async function carregarRequisicao() {
 
 
 /*############################################################################
- CARREGAR LISTA DE FORNECEDORES.
+ CARREGAR MODAL COM A LISTA DE FORNECEDORES.
 ############################################################################*/
 
 async function carregarModal() {
  const modalEl = document.getElementById("modal");
- modalEl.classList.remove("modal-esconder")
- modalEl.classList.add("modal-exibir")
-
+ modalEl.classList.remove("modal-esconder");
+ modalEl.classList.add("modal-exibir");
 
  const fornecedoresEl = document.getElementById("select-lista");
  fornecedoresEl.innerHTML = "<div class='carregando'>Carregando... </div>";
@@ -92,7 +91,7 @@ async function carregarModal() {
       <div id="${fornecedor.id +"_"+ fornecedor.razao_social}" class="fornecedor-box" onclick="selecionarFornecedor('${fornecedor.id +"_"+ fornecedor.razao_social}')">
        <img src="${fornecedor.imagem ? fornecedor.imagem : 'default.png'}" class="fornecedor-logo"/>
        <div class="fornecedor-info">
-        <input id="fornecedor_id" type="hidden" name="fornecedor_id" value="${fornecedor.id}">
+        <input type="hidden" class="form-input" name="fornecedor_id" value="${fornecedor.id}">
         <p class="fornecedor-cnpj">${fornecedor.cnpj}</p>
         <p class="fornecedor-razaosocial">${fornecedor.razao_social}</p>
        </div>
@@ -100,7 +99,6 @@ async function carregarModal() {
     `;
   });
  }
-
 }
 
 
@@ -112,8 +110,9 @@ async function carregarModal() {
 
 function fecharModal() {
  const modalEl = document.getElementById("modal");
- modalEl.classList.add("modal-esconder")
- modalEl.classList.remove("modal-exibir")
+ modalEl.classList.add("modal-esconder");
+ modalEl.classList.remove("modal-exibir");
+ modalEl.innerHTML = "";
  FORNECEDOR_SELECIONADO = null;
 }
 
@@ -121,11 +120,12 @@ function fornecedorSelecionado() {
  const modalEl = document.getElementById("modal");
  modalEl.classList.add("modal-esconder")
  modalEl.classList.remove("modal-exibir")
+ modalEl.innerHTML = "";
 
  FORNECEDOR_SELECIONADO.classList.remove("fornecedor-selecionado");
  FORNECEDOR_SELECIONADO.classList.remove("fornecedor-box");
+ FORNECEDOR_SELECIONADO.removeAttribute("onclick");
  FORNECEDOR_SELECIONADO.classList.add("item-box");
- FORNECEDOR_SELECIONADO.removeAttribute("onclick")
 
  const fornecedorEl = document.getElementById("fornecedor");
  fornecedorEl.innerHTML = "";
@@ -134,13 +134,15 @@ function fornecedorSelecionado() {
 }
 
 
+
+
 /*############################################################################
- FUNÇÃO PARA SELECIONADO O FORNECEDOR NO MODAL MUDAR FORNECEDOR.
+ FUNÇÃO PARA SELECIONAR O FORNECEDOR NO MODAL MUDAR FORNECEDOR.
 ############################################################################*/
 
 function selecionarFornecedor(fornecedor) {
-
  const fornecedoresEl = document.getElementsByClassName("fornecedor-box");
+
  for (fornecedorEl of fornecedoresEl) {
   if(fornecedor == fornecedorEl.id){
    FORNECEDOR_SELECIONADO = fornecedorEl;
@@ -149,7 +151,6 @@ function selecionarFornecedor(fornecedor) {
    fornecedorEl.classList.remove("fornecedor-selecionado");
   }
  }
-
 }
 
 
@@ -164,6 +165,40 @@ async function carregarEventsListeners() {
  const botaoAlterarFornecedorEl = document.getElementById("fornecedor-alterar-botao");
  botaoAlterarFornecedorEl.addEventListener("click", carregarModal);
 }
+
+
+
+
+/*############################################################################
+ SALVAR DADOS DA NOTA FISCAL
+############################################################################*/
+async function salvarNotaFiscal() {
+ const valoresEl = document.getElementsByClassName("form-input");
+ const itensEl = document.getElementsByClassName("form-input-item");
+
+ let itemSelecionado = false;
+ let fornecedorSelecionado = false;
+
+ let itens = []
+ for (const itemEl of itensEl) {
+  if(itemEl.value != 0) {
+   itens.push({[itemEl.name]: itemEl.value});
+  }
+ }
+ 
+ let valores = []
+ for (const valorEl of valoresEl) {
+  if(valorEl.value != 0) {
+   valores.push({[valorEl.name]: valorEl.value});
+  }
+ }
+
+
+
+
+}
+
+
 
 
 

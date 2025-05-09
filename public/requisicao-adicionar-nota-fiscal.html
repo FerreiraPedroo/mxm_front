@@ -34,46 +34,67 @@
     </div>
    </div>
    <div class="modal-rodape">
-    <button class="modal-cabecalho-botao-confirmar" onclick="fornecedorSelecionado(); fecharModal();">ALTERAR</button>
+    <input type="button" id="" class="input-botao input-botao-verde" onclick="fornecedorSelecionado(); fecharModal();" value="ALTERAR" />
    </div>
   </div>
  </div>
 
- <main id="main-conteiner">
-  <div id="head">
-   <div id="titulo-box">
-    <div id="titulo-text">ADICIONAR NOTAFISCAL: REQUISIÇÃO <span id="requisicao-numero"></span></div>
+ <main id="main-container">
+
+  <div class="pagina-cabecalho">
+   <div class="cabecalho-box">
+    <div class="cabecalho-texto">ADICIONAR NOTAFISCAL: REQUISIÇÃO<span id="requisicao-numero"></span></div>
    </div>
   </div>
 
+
   <hr />
+
 
   <section class="bloco-sessao">
    <div class="bloco-cabecalho">
     <p class="bloco-cabecalho-titulo">PEDIDO DE COMPRA</p>
    </div>
-   <div id="" class=""></div>
+   <div id="" class="">
+    <div class="input-texto-box">
+     <p class="input-texto-titulo">Nº Pedido</p>
+     <input type="text" name="pedido" class="input-texto form-input" />
+    </div>
+   </div>
   </section>
 
+
   <hr />
+
 
   <section class="bloco-sessao">
    <div class="bloco-cabecalho">
     <p class="bloco-cabecalho-titulo">FORNECEDOR</p>
-    <input type="button" id="fornecedor-alterar-botao" class="input-botao" value="ALTERAR FORNECEDOR" />
+    <input type="button" id="fornecedor-alterar-botao" class="input-botao input-botao-azul" value="ALTERAR FORNECEDOR" />
    </div>
    <div id="fornecedor"></div>
   </section>
 
+
   <hr />
+
 
   <section class="bloco-sessao">
    <div class="bloco-cabecalho">
     <p class="bloco-cabecalho-titulo">MATERIAIS</p>
+   </div>
    <div id="items"></div>
   </section>
 
+
   <hr />
+
+  <section class="bloco-sessao">
+   <div class="bloco-rodape">
+    <input type="button" id="salvar-notafical" class="input-botao input-botao-verde" onclick="salvarNotaFiscal()" value="SALVAR" />
+   </div>
+  </section>
+
 
  </main>
 

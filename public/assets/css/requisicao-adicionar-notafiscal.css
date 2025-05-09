@@ -1,32 +1,14 @@
-@import url('componentes/input-botao.css');
+@import url('componentes/pagina-cabecalho.css');
 @import url('componentes/bloco-sessao.css');
+@import url('componentes/input-botao.css');
+@import url('componentes/input-texto.css');
+
+
 
 main {}
 
 /*///////////////////////////////////////////////////////////////////
 // TITULO DA PÁGINA //////////////////////////////////////////////*/
-#head {
-
-}
-#titulo {
- display: flex;
- flex-direction: column;
-  gap: 12px;
-}
-#titulo-box {
- font-size: 1.8rem;
- background-color: #eee;
- padding: 12px;
- border-radius: 8px 8px 0 0;
-}
-#titulo-text {
- font-size: 1.6rem;
-}
-#titulo-text span {
- font-size: 1.8rem;
- font-weight: bold;
- padding: 12px;
-}
 
 
 
