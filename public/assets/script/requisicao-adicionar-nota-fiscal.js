@@ -112,15 +112,16 @@ function fecharModal() {
  const modalEl = document.getElementById("modal");
  modalEl.classList.add("modal-esconder");
  modalEl.classList.remove("modal-exibir");
- modalEl.innerHTML = "";
  FORNECEDOR_SELECIONADO = null;
 }
 
 function fornecedorSelecionado() {
  const modalEl = document.getElementById("modal");
- modalEl.classList.add("modal-esconder")
- modalEl.classList.remove("modal-exibir")
- modalEl.innerHTML = "";
+ modalEl.classList.add("modal-esconder");
+ modalEl.classList.remove("modal-exibir");
+
+ const listafornecedores = document.getElementById("select-lista");
+ listafornecedores.innerHTML = "";
 
  FORNECEDOR_SELECIONADO.classList.remove("fornecedor-selecionado");
  FORNECEDOR_SELECIONADO.classList.remove("fornecedor-box");
@@ -176,9 +177,26 @@ async function salvarNotaFiscal() {
  const valoresEl = document.getElementsByClassName("form-input");
  const itensEl = document.getElementsByClassName("form-input-item");
 
- let itemSelecionado = false;
- let fornecedorSelecionado = false;
+ let itemNaoSelecionado = false;
+ let fornecedorNaoSelecionado = false;
+ 
+ let valores = {}
+ for (const valorEl of valoresEl) {
 
+  // verifica se o fornecedor foi selecionado.
+  if(valorEl.name == "fornecedor_id" && !valorEl.value) {
+   fornecedorSelecionado = true;
+  }
+
+  // adiciona o valor do input.
+  if(valorEl.value != 0) {
+   valores[valorEl.name] =  valorEl.value;
+  }
+
+ }
+
+
+ // adiciona a quantidade dos itens que estão na nf.
  let itens = []
  for (const itemEl of itensEl) {
   if(itemEl.value != 0) {
@@ -186,12 +204,12 @@ async function salvarNotaFiscal() {
   }
  }
  
- let valores = []
- for (const valorEl of valoresEl) {
-  if(valorEl.value != 0) {
-   valores.push({[valorEl.name]: valorEl.value});
-  }
+ if(!itens.length){
+  itemsNaoSelecionados = true;
  }
+
+
+
 
 
 
@@ -200,9 +218,25 @@ async function salvarNotaFiscal() {
 
 
 
+/*############################################################################
+ NOTIFICADOR
+############################################################################*/
+function notificador(notificacao) {
+ const notificadorEl = document.getElementById("notificador");
+ 
+ const conteudo = `<div id="OK-funcionando" class="notificador-conteudo notificador-tipo-${notificacao.tipo}">
+                   
+                   </div>`
+ notificadorEl.innerHTML = conteudo;
+
+  if(notificadorEl.children.length){
+  console.log(notificadorEl.children[0].id);
+ }
 
 
+}
 
+notificador({})
 /*############################################################################
  INICIAR SCRIPT DA PÁGINA
 ############################################################################*/
